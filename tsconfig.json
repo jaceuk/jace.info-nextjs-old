@@ -12,7 +12,6 @@
       "@modules/*": ["src/modules/*"],
       "@lib/*": ["src/lib/*"],
       "@styles/*": ["src/styles/*"],
-      "@data/*": ["src/data/*"],
       "@hooks/*": ["src/common/hooks/*"],
       "@images/*": ["src/images/*"],
       "@types/*": ["src/common/types/*"],
