@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Seen Machine</title>
+        <title>NextJS boilerplate</title>
       </Head>
 
       <Layout>
