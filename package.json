@@ -9,8 +9,8 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@fontsource/museomoderno": "^4.5.9",
-    "@fontsource/poppins": "^4.5.8",
+    "@fontsource/inter": "^4.5.12",
+    "@fontsource/poppins": "^4.5.9",
     "next": "latest",
     "react": "17.0.2",
     "react-dom": "17.0.2"

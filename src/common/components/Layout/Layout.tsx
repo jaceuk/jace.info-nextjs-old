@@ -5,11 +5,5 @@ interface Props {
 }
 
 export default function Layout({ children }: Props) {
-  return (
-    <div className="wrapper">
-      <div className={styles.content}>
-        <main className={styles.main}>{children}</main>
-      </div>
-    </div>
-  );
+  return <div className={styles.main}>{children}</div>;
 }
