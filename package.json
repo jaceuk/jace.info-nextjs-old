@@ -32,7 +32,8 @@
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard-scss": "^3.0.0",
     "stylelint-prettier": "^2.0.0",
-    "typescript": "^4.6.4"
+    "typescript": "^4.6.4",
+    "typescript-plugin-css-modules": "^3.4.0"
   },
   "lint-staged": {
     "*.{ts,tsx,js}": "eslint --cache --fix --cache-location ./node_modules/.cache/.eslintcache"
