@@ -1,9 +1,16 @@
-import styles from './Layout.module.scss';
+import Footer from './components/Footer';
+import Navbar from './components/Navbar';
 
 interface Props {
   children: React.ReactNode;
 }
 
 export default function Layout({ children }: Props) {
-  return <div className={styles.main}>{children}</div>;
+  return (
+    <>
+      <Navbar />
+      <div>{children}</div>
+      <Footer />
+    </>
+  );
 }

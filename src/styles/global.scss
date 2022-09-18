@@ -2,6 +2,7 @@
   max-width: 1376px;
   margin-left: auto;
   margin-right: auto;
+  padding: 0 var(--s-2-4);
 }
 
 .sr-only {
@@ -17,4 +18,13 @@
 
 .svg-container {
   display: flex;
+}
+
+section {
+  background: linear-gradient(0deg, var(--c-background) 0%, rgba(242, 242, 242, 0) var(--s-4-5));
+  padding: var(--s-4-5) 0;
+}
+
+a {
+  width: fit-content;
 }

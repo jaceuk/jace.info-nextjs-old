@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import HomePage from '@modules/Home';
+import Contact from '@modules/Contact';
 import Layout from '@components/Layout';
 
 export default function Home() {
@@ -10,7 +10,7 @@ export default function Home() {
       </Head>
 
       <Layout>
-        <HomePage />
+        <Contact />
       </Layout>
     </>
   );
