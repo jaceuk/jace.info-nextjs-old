@@ -29,28 +29,28 @@ export default function Navbar() {
 
             <Link href="/about">
               <a>
-                <div>About</div>
+                <div className={styles.text}>About</div>
                 <div className={styles.underline}></div>
               </a>
             </Link>
 
             <Link href="/projects">
               <a>
-                <div>Projects</div>
+                <div className={styles.text}>Projects</div>
                 <div className={styles.underline}></div>
               </a>
             </Link>
 
             <Link href="/blog">
               <a>
-                <div>Blog</div>
+                <div className={styles.text}>Blog</div>
                 <div className={styles.underline}></div>
               </a>
             </Link>
 
             <Link href="/contact">
               <a>
-                <div>Contact</div>
+                <div className={styles.text}>Contact</div>
                 <div className={styles.underline}></div>
               </a>
             </Link>
