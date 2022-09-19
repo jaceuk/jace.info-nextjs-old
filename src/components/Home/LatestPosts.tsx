@@ -6,6 +6,7 @@ import BlogPostsTitle from './BlogPostsTitle';
 import IconLink from '@components/IconLink';
 import { ArrowRight } from 'iconoir-react';
 import Tag from '@components/Tag';
+import Tags from '@components/Tags';
 
 interface Props {
   latestPostsData: PostData[];
@@ -34,7 +35,7 @@ export default function LatestPosts({ latestPostsData }: Props) {
               </h2>
 
               {tags && (
-                <div className="tags">
+                <Tags>
                   {tags.map((tag) => (
                     <Link href={`/blog/${slug}`} key={tag}>
                       <a>
@@ -42,7 +43,7 @@ export default function LatestPosts({ latestPostsData }: Props) {
                       </a>
                     </Link>
                   ))}
-                </div>
+                </Tags>
               )}
 
               <p>{excerpt}</p>
