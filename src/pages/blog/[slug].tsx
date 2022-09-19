@@ -41,7 +41,7 @@ export default function Post({ postData }: IProps) {
 
       <main className="section">
         <InnerWrapper>
-          <div className="markdown" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+          <div className="markdown readable-content" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
         </InnerWrapper>
       </main>
     </Layout>

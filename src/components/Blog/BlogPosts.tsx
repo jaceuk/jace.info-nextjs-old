@@ -2,12 +2,11 @@ import Link from 'next/link';
 import Card from '@components/Card';
 import CardGrid from '@components/CardGrid';
 import InnerWrapper from '@components/InnerWrapper';
-import BlogPostsTitle from './BlogPostsTitle';
 import IconLink from '@components/IconLink';
 import { ArrowRight } from 'iconoir-react';
 
 interface Props {
-  latestPostsData: PostData[];
+  allPostsData: PostData[];
 }
 
 interface PostData {
@@ -16,14 +15,12 @@ interface PostData {
   title: string;
 }
 
-export default function LatestPosts({ latestPostsData }: Props) {
+export default function LatestPosts({ allPostsData }: Props) {
   return (
     <section className="section">
       <InnerWrapper>
-        <BlogPostsTitle />
-
         <CardGrid>
-          {latestPostsData.map(({ slug, excerpt, title }: PostData) => (
+          {allPostsData.map(({ slug, excerpt, title }: PostData) => (
             <Card key={slug}>
               <h2 className="h3">
                 <Link href={`/blog/${slug}`}>

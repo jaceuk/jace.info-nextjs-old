@@ -1,8 +1,29 @@
 import Head from 'next/head';
-import Blog from '@components/Blog';
+import { getSortedPostsData } from '@lib/posts';
+import BlogPosts from '@components/Blog/BlogPosts';
 import Layout from '@components/Layout';
+import PageTitle from '@components/PageTitle';
 
-export default function Home() {
+interface Props {
+  allPostsData: PostData[];
+}
+
+interface PostData {
+  slug: string;
+  excerpt: string;
+  title: string;
+}
+
+export async function getStaticProps() {
+  const allPostsData = getSortedPostsData();
+  return {
+    props: {
+      allPostsData,
+    },
+  };
+}
+
+export default function Home({ allPostsData }: Props) {
   return (
     <>
       <Head>
@@ -10,7 +31,8 @@ export default function Home() {
       </Head>
 
       <Layout>
-        <Blog />
+        <PageTitle title="Blog posts" />
+        <BlogPosts allPostsData={allPostsData} />
       </Layout>
     </>
   );

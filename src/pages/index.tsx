@@ -6,10 +6,10 @@ import About from '@components/Home/About';
 import LatestPosts from '@components/Home/LatestPosts';
 
 interface Props {
-  latestPostsData: IPostData[];
+  latestPostsData: PostData[];
 }
 
-interface IPostData {
+interface PostData {
   slug: string;
   excerpt: string;
   title: string;

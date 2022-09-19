@@ -1,14 +1,16 @@
-import InnerWrapper from '@components/InnerWrapper';
 import Link from 'next/link';
-import styles from './Navbar.module.scss';
+import { useRouter } from 'next/router';
+import InnerWrapper from '@components/InnerWrapper';
 
 export default function Navbar() {
+  const router = useRouter();
+
   return (
     <div>
       <InnerWrapper>
-        <div className={styles.navbar}>
+        <div className="navbar">
           <Link href="/">
-            <a className={styles.logo}>
+            <a className="logo">
               <svg viewBox="0 0 67 63" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   fillRule="evenodd"
@@ -22,37 +24,37 @@ export default function Navbar() {
 
           <nav>
             <Link href="/">
-              <a className={styles.active}>
-                <div className={styles.text}>Home</div>
-                <div className={styles.underline}></div>
+              <a className={router.pathname === '/' && 'active'}>
+                <div className="text">Home</div>
+                <div className="underline"></div>
               </a>
             </Link>
 
             <Link href="/about">
-              <a>
-                <div className={styles.text}>About</div>
-                <div className={styles.underline}></div>
+              <a className={router.pathname === '/about' && 'active'}>
+                <div className="text">About</div>
+                <div className="underline"></div>
               </a>
             </Link>
 
             <Link href="/projects">
-              <a>
-                <div className={styles.text}>Projects</div>
-                <div className={styles.underline}></div>
+              <a className={router.pathname === '/projects' && 'active'}>
+                <div className="text">Projects</div>
+                <div className="underline"></div>
               </a>
             </Link>
 
             <Link href="/blog">
-              <a>
-                <div className={styles.text}>Blog</div>
-                <div className={styles.underline}></div>
+              <a className={router.pathname === '/blog' && 'active'}>
+                <div className="text">Blog</div>
+                <div className="underline"></div>
               </a>
             </Link>
 
             <Link href="/contact">
-              <a>
-                <div className={styles.text}>Contact</div>
-                <div className={styles.underline}></div>
+              <a className={router.pathname === '/contact' && 'active'}>
+                <div className="text">Contact</div>
+                <div className="underline"></div>
               </a>
             </Link>
           </nav>
