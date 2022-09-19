@@ -25,7 +25,11 @@ export default function LatestPosts({ latestPostsData }: Props) {
         <CardGrid>
           {latestPostsData.map(({ slug, excerpt, title }: PostData) => (
             <Card key={slug}>
-              <h2>{title}</h2>
+              <h2>
+                <Link href={`/blog/${slug}`}>
+                  <a>{title}</a>
+                </Link>
+              </h2>
               <p>{excerpt}</p>
               <Link href={`/blog/${slug}`}>
                 <a>
