@@ -238,3 +238,26 @@ footer {
     height: 100%;
   }
 }
+
+.tags {
+  display: flex;
+  align-items: center;
+  gap: var(--s-1-2);
+  flex-wrap: wrap;
+
+  .tag {
+    border: 1px solid var(--c-background);
+    border-radius: 100px;
+    padding: var(--s-1) var(--s-2);
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: var(--s-1);
+    font-size: var(--fs-small);
+    font-weight: var(--fw-semi-bold);
+
+    .svg-container {
+      height: 30px;
+    }
+  }
+}

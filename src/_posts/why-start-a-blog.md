@@ -2,7 +2,6 @@
 title: 'Why start a blog?'
 date: '2022-05-29'
 excerpt: "So I've finally decided to take the plunge and start a blog but why on earth would I do such a crazy thing?"
-tags: ['Misc']
 ---
 
 Blogs were all the rage over a decade ago so I realise I'm rather late to the party but this isn't about you, it's about me. Let me explain.

@@ -145,6 +145,8 @@ export default function About() {
               <p className="readable-content">
                 I also have experience in a wide range of additional areas and technologies.
               </p>
+
+              <div>NodeJS, PHP, MySQL, Res API, WordPress, SEO, SvelteKit</div>
             </div>
           </InnerWrapper>
         </section>

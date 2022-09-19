@@ -2,7 +2,7 @@
 title: 'Rebuilding this site'
 date: '2022-05-30'
 excerpt: 'My personal portfolio site was getting a bit long in the tooth so it was time for a change and to learn some new things along the way.'
-tags: ['React', 'Nextjs', 'Sveltekit']
+tags: ['React', 'NextJS', 'SvelteKit']
 ---
 
 As a front end developer it can be difficult to get across your abilities to potential employers or freelance clients however one tool that can definitely help is having a portfolio website.

@@ -24,35 +24,35 @@ export default function Navbar() {
 
           <nav>
             <Link href="/">
-              <a className={router.pathname === '/' && 'active'}>
+              <a className={router.pathname === '/' ? 'active' : ''}>
                 <div className="text">Home</div>
                 <div className="underline"></div>
               </a>
             </Link>
 
             <Link href="/about">
-              <a className={router.pathname === '/about' && 'active'}>
+              <a className={router.pathname === '/about' ? 'active' : ''}>
                 <div className="text">About</div>
                 <div className="underline"></div>
               </a>
             </Link>
 
             <Link href="/projects">
-              <a className={router.pathname === '/projects' && 'active'}>
+              <a className={router.pathname === '/projects' ? 'active' : ''}>
                 <div className="text">Projects</div>
                 <div className="underline"></div>
               </a>
             </Link>
 
             <Link href="/blog">
-              <a className={router.pathname === '/blog' && 'active'}>
+              <a className={router.pathname === '/blog' ? 'active' : ''}>
                 <div className="text">Blog</div>
                 <div className="underline"></div>
               </a>
             </Link>
 
             <Link href="/contact">
-              <a className={router.pathname === '/contact' && 'active'}>
+              <a className={router.pathname === '/contact' ? 'active' : ''}>
                 <div className="text">Contact</div>
                 <div className="underline"></div>
               </a>
