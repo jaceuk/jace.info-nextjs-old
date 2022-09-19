@@ -35,13 +35,13 @@ Ths contact form was handled using a serverless function. This is a piece of cod
 
 **Given that this was my first time with NextJS and CSS Modules the overall experience was positive however it was still essentially just React.**
 
-## The Sveltekit version
+## The SvelteKit version
 
 Right from the start **everything feels fast, we're talking a true generational leap** here. It uses Vite as a build tool and it makes webpack feel old and clunky in comparison.
 
 Being so entrenched in the React ecosystem I was surprised that there's no virtual DOM, it's replaced by the actual DOM (craziness!). Svelte writes code that surgically updates the DOM when the state of your app changes so no more senseless rerendering of components that can often be seen in React. Don't get me wrong, **React does a good job but this is just … better**.
 
-The experience of writing code in Sveltekit is also a big improvement. Files are comprised of Javascript, HTML (with a simple template syntax to handle programmatic considerations) and CSS. I don't have a particular problem with how React does things however when you start working with Sveltekit **you realise just how far React has strayed from the standards based approach I started with**.
+The experience of writing code in SvelteKit is also a big improvement. Files are comprised of Javascript, HTML (with a simple template syntax to handle programmatic considerations) and CSS. I don't have a particular problem with how React does things however when you start working with SvelteKit **you realise just how far React has strayed from the standards based approach I started with**.
 
 As with NextJS the contact form was handled by a serverless function using endpoints and also gets a thumbs up.
 
@@ -51,18 +51,19 @@ It's not all good and there are a few negatives:
 - It's still in Beta so there's no real way of knowing what might change between now and release
 - I noticed a few issues with the tooling surrounding svelete. This could have been just a local issue but it didn't feel quite as complete
 
-## And the winner is ... Sveltekit!
+## And the winner is ... NextJS?!
 
-Despite me gushing over Sveltekit this was a very close call between Sveltekit and NextJS.
+In a shock twist I decided to go with NextJS. When working on side projects I usually try and stick with whatever tech stack my day job uses to help me improve my skills, making NextJS the obvious choice.
 
-When working on side projects I usually try and stick with whatever tech stack my day job uses to help me improve my skills. This made NextJS the obvious choice but **working with Sveltekit really did feel like a return to simpler times** where you could just write HTML, CSS, and JavaScript and that’s a BIG win for me.
+Being totally transparent I almost decided to go with SvelteKit but changed my mind at the last minute.
 
+Working with SvelteKit really did feel like a return to simpler times where you could just write HTML, CSS, and JavaScript and that’s a BIG win for me.
 It was fast, both in development and the final build, and the developer experience was great despite having to learn the Svelte way of doing things.
 
 Just as a quick note of comparison here are the Lighthouse performance scores:
 
 - React 86
-- NextJS 95
-- **Sveltkit 97**
+- **NextJS 95**
+- Sveltkit 97
 
-No one knows that the future holds but with Rich Harris, Svelte's creator, now working on the project full time under Vercel the future 'should' be a bright one.
+So it's NextJS ... for now ;)

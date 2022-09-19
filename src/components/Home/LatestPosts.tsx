@@ -6,9 +6,6 @@ import BlogPostsTitle from './BlogPostsTitle';
 import IconLink from '@components/IconLink';
 import { ArrowRight } from 'iconoir-react';
 import Tag from '@components/Tag';
-import JavaScript from '@components/SVGs/JavaScript';
-import React from '@components/SVGs/React';
-import TagIcon from '@components/TagIcon';
 
 interface Props {
   latestPostsData: PostData[];
