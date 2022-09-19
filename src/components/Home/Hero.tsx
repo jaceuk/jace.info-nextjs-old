@@ -1,14 +1,13 @@
 import Image from 'next/image';
 import InnerWrapper from '@components/InnerWrapper';
-import styles from './Hero.module.scss';
 import Duck from '@images/duck.jpg';
 
 export default function Hero() {
   return (
-    <div className={`section ${styles.container}`}>
+    <div className="section hero-section">
       <InnerWrapper>
-        <div className={styles.hero}>
-          <div className={styles.image}>
+        <div className="hero">
+          <div className="image">
             <Image src={Duck} alt="" />
           </div>
 

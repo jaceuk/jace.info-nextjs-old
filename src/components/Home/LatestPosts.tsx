@@ -7,7 +7,7 @@ import IconLink from '@components/IconLink';
 import { ArrowRight } from 'iconoir-react';
 
 interface Props {
-  allPostsData: PostData[];
+  latestPostsData: PostData[];
 }
 
 interface PostData {
@@ -16,14 +16,14 @@ interface PostData {
   title: string;
 }
 
-export default function LatestPosts({ allPostsData }: Props) {
+export default function LatestPosts({ latestPostsData }: Props) {
   return (
     <section className="section">
       <InnerWrapper>
         <BlogPostsTitle />
 
         <CardGrid>
-          {allPostsData.map(({ slug, excerpt, title }: PostData) => (
+          {latestPostsData.map(({ slug, excerpt, title }: PostData) => (
             <Card key={slug}>
               <h2>{title}</h2>
               <p>{excerpt}</p>

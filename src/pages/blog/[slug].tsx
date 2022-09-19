@@ -2,6 +2,7 @@ import Layout from '@components/Layout';
 import { getAllPostSlugs, getPostData } from '@lib/posts';
 import Head from 'next/head';
 import InnerWrapper from '@components/InnerWrapper';
+import PageTitle from '@components/PageTitle';
 
 interface IProps {
   postData: {
@@ -36,10 +37,13 @@ export default function Post({ postData }: IProps) {
         <title>{postData.title}</title>
       </Head>
 
-      <InnerWrapper>
-        <h1>{postData.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-      </InnerWrapper>
+      <PageTitle title={postData.title} />
+
+      <main className="section">
+        <InnerWrapper>
+          <div className="markdown" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        </InnerWrapper>
+      </main>
     </Layout>
   );
 }

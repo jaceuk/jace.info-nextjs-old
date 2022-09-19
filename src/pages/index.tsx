@@ -6,7 +6,7 @@ import About from '@components/Home/About';
 import LatestPosts from '@components/Home/LatestPosts';
 
 interface Props {
-  allPostsData: IPostData[];
+  latestPostsData: IPostData[];
 }
 
 interface IPostData {
@@ -17,15 +17,16 @@ interface IPostData {
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
-  console.log(allPostsData);
+  const numberOfPostsToShow = 4;
+  const latestPostsData = allPostsData.slice(0, numberOfPostsToShow);
   return {
     props: {
-      allPostsData,
+      latestPostsData,
     },
   };
 }
 
-export default function Home({ allPostsData }: Props) {
+export default function Home({ latestPostsData }: Props) {
   return (
     <>
       <Head>
@@ -35,7 +36,7 @@ export default function Home({ allPostsData }: Props) {
       <Layout>
         <Hero />
         <About />
-        <LatestPosts allPostsData={allPostsData} />
+        <LatestPosts latestPostsData={latestPostsData} />
       </Layout>
     </>
   );
