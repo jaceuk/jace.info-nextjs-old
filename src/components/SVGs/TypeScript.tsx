@@ -1,6 +1,8 @@
+import SVGContainer from './SVGContainer';
+
 export default function TypeScript() {
   return (
-    <span className="svg-container">
+    <SVGContainer>
       <svg fill="none" version="1.1" viewBox="0 0 512 512">
         <rect width="512" height="512" rx="50" fill="#3178c6" />
         <path
@@ -10,6 +12,6 @@ export default function TypeScript() {
           fillRule="evenodd"
         />
       </svg>
-    </span>
+    </SVGContainer>
   );
 }

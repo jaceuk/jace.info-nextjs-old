@@ -1,0 +1,9 @@
+.skillTitle {
+  display: flex;
+  gap: var(--s-1-2);
+  align-items: center;
+
+  svg {
+    height: 74px;
+  }
+}

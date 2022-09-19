@@ -1,7 +1,15 @@
+import styles from './SkillTitle.module.scss';
+
 interface Props {
-  children: React.ReactNode;
+  icon: React.ReactNode;
+  title: string;
 }
 
-export default function SkillTitle({ children }: Props) {
-  return <h3 className="skill-title">{children}</h3>;
+export default function SkillTitle({ icon, title }: Props) {
+  return (
+    <h3 className={styles.skillTitle}>
+      {icon}
+      {title}
+    </h3>
+  );
 }

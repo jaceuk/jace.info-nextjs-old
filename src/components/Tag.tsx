@@ -7,6 +7,7 @@ import Accessibility from '@components/SVGs/Accessibility';
 import Svelte from '@components/SVGs/Svelte';
 import NextJS from '@components/SVGs/NextJS';
 import Git from '@components/SVGs/Git';
+import styles from './Tag.module.scss';
 
 interface Props {
   tag: string;
@@ -14,7 +15,7 @@ interface Props {
 
 export default function Tag({ tag }: Props) {
   return (
-    <div className="tag">
+    <div className={styles.tag}>
       {tag === 'React' && <React />}
       {tag === 'JavaScript' && <JavaScript />}
       {tag === 'TypeScript' && <TypeScript />}

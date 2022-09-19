@@ -1,6 +1,8 @@
+import SVGContainer from './SVGContainer';
+
 export default function Svelte() {
   return (
-    <span className="svg-container">
+    <SVGContainer>
       <svg viewBox="0 0 98.1 118">
         <path
           fill="#FF3E00"
@@ -20,6 +22,6 @@ export default function Svelte() {
 	c8.9-2.3,18.2,1.2,23.4,8.7c3.2,4.4,4.4,9.9,3.5,15.3c-0.9,5.2-4.1,9.9-8.6,12.7l-27.5,17.5C44.8,102.5,42.9,103.3,40.9,103.9"
         />
       </svg>
-    </span>
+    </SVGContainer>
   );
 }

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import InnerWrapper from '@components/InnerWrapper';
+import styles from './Navbar.module.scss';
 
 export default function Navbar() {
   const router = useRouter();
@@ -8,9 +9,9 @@ export default function Navbar() {
   return (
     <div>
       <InnerWrapper>
-        <div className="navbar">
+        <div className={styles.navbar}>
           <Link href="/">
-            <a className="logo">
+            <a className={styles.logo}>
               <svg viewBox="0 0 67 63" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   fillRule="evenodd"
@@ -24,37 +25,37 @@ export default function Navbar() {
 
           <nav>
             <Link href="/">
-              <a className={router.pathname === '/' ? 'active' : ''}>
-                <div className="text">Home</div>
-                <div className="underline"></div>
+              <a className={router.pathname === '/' ? styles.active : ''}>
+                <div className={styles.text}>Home</div>
+                <div className={styles.underline}></div>
               </a>
             </Link>
 
             <Link href="/about">
-              <a className={router.pathname === '/about' ? 'active' : ''}>
-                <div className="text">About</div>
-                <div className="underline"></div>
+              <a className={router.pathname === '/about' ? styles.active : ''}>
+                <div className={styles.text}>About</div>
+                <div className={styles.underline}></div>
               </a>
             </Link>
 
             <Link href="/projects">
-              <a className={router.pathname === '/projects' ? 'active' : ''}>
-                <div className="text">Projects</div>
-                <div className="underline"></div>
+              <a className={router.pathname === '/projects' ? styles.active : ''}>
+                <div className={styles.text}>Projects</div>
+                <div className={styles.underline}></div>
               </a>
             </Link>
 
             <Link href="/blog">
-              <a className={router.pathname === '/blog' ? 'active' : ''}>
-                <div className="text">Blog</div>
-                <div className="underline"></div>
+              <a className={router.pathname === '/blog' ? styles.active : ''}>
+                <div className={styles.text}>Blog</div>
+                <div className={styles.underline}></div>
               </a>
             </Link>
 
             <Link href="/contact">
-              <a className={router.pathname === '/contact' ? 'active' : ''}>
-                <div className="text">Contact</div>
-                <div className="underline"></div>
+              <a className={router.pathname === '/contact' ? styles.active : ''}>
+                <div className={styles.text}>Contact</div>
+                <div className={styles.underline}></div>
               </a>
             </Link>
           </nav>

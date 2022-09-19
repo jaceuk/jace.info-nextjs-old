@@ -10,6 +10,7 @@ import TypeScript from '@components/SVGs/TypeScript';
 import CSS from '@components/SVGs/CSS';
 import HTML from '@components/SVGs/HTML';
 import Accessibility from '@components/SVGs/Accessibility';
+import styles from './About.module.scss';
 
 export default function About() {
   return (
@@ -17,8 +18,8 @@ export default function About() {
       <main>
         <section className="section">
           <InnerWrapper>
-            <div className="about-container">
-              <div className="about-content readable-content">
+            <div className={styles.aboutContainer}>
+              <div className={`${styles.aboutContent} readable-content`}>
                 <h2 className="subtitle">Front end developer</h2>
                 <p>
                   I&apos;m a passionate Front End Developer with <strong>over 20 years experience</strong> who focuses
@@ -70,7 +71,7 @@ export default function About() {
 
         <section className="section">
           <InnerWrapper>
-            <div className="skills-container">
+            <div className={styles.skillsContainer}>
               <h2 className="h4">Technical skills</h2>
 
               <p className="readable-content">
@@ -80,12 +81,7 @@ export default function About() {
 
               <CardGrid>
                 <Card>
-                  <SkillTitle>
-                    <>
-                      <Accessibility />
-                      Accessibility
-                    </>
-                  </SkillTitle>
+                  <SkillTitle title="Accessibility" icon={<Accessibility />} />
                   <p>
                     I&apos;m a big advocate of accessiblity and have a wide range of experience of producing accessible
                     websites and apps.
@@ -93,10 +89,7 @@ export default function About() {
                 </Card>
 
                 <Card>
-                  <SkillTitle>
-                    <CSS />
-                    CSS
-                  </SkillTitle>
+                  <SkillTitle title="CSS" icon={<CSS />} />
                   <p>
                     I&apos;ve worked with everything from plain CSS and SASS through to React with Styled Components and
                     CSS Modules.
@@ -104,10 +97,7 @@ export default function About() {
                 </Card>
 
                 <Card>
-                  <SkillTitle>
-                    <HTML />
-                    HTML
-                  </SkillTitle>
+                  <SkillTitle title="HTML" icon={<HTML />} />
                   <p>
                     I&apos;m intimately familiar with HTML, a skill that seems to have fallen by the wayside in the
                     abstracted world of front end frameworks.
@@ -115,18 +105,12 @@ export default function About() {
                 </Card>
 
                 <Card>
-                  <SkillTitle>
-                    <JavaScript />
-                    JavaScript
-                  </SkillTitle>
+                  <SkillTitle title="JavaScript" icon={<JavaScript />} />
                   <p>I&apos;ve worked with vanilla Javascript along with libraries such as jQuery.</p>
                 </Card>
 
                 <Card>
-                  <SkillTitle>
-                    <React />
-                    React
-                  </SkillTitle>
+                  <SkillTitle title="React" icon={<React />} />
                   <p>
                     I&apos;ve worked extensively with ReactJS and various associated frameworks such as NextJS and
                     Gatsby.
@@ -134,10 +118,7 @@ export default function About() {
                 </Card>
 
                 <Card>
-                  <SkillTitle>
-                    <TypeScript />
-                    TypeScript
-                  </SkillTitle>
+                  <SkillTitle title="TypeScript" icon={<TypeScript />} />
                   <p>I&apos;ve been using TypeScript in pretty much every project.</p>
                 </Card>
               </CardGrid>

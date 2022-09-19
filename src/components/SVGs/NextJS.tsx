@@ -1,6 +1,8 @@
+import SVGContainer from './SVGContainer';
+
 export default function NextJS() {
   return (
-    <span className="svg-container">
+    <SVGContainer>
       <svg viewBox="0 0 207 124">
         <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
           <g id="Black-Next.js" transform="translate(-247.000000, -138.000000)" fill="#000000" fillRule="nonzero">
@@ -23,6 +25,6 @@ export default function NextJS() {
           </g>
         </g>
       </svg>
-    </span>
+    </SVGContainer>
   );
 }
