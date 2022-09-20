@@ -13,6 +13,7 @@ import Accessibility from '@components/SVGs/Accessibility';
 import styles from './About.module.scss';
 import secondarySkills from '@content/secondarySkills';
 import primarySkills from '@content/primarySkills';
+import about from '@content/about';
 
 export default function About() {
   function getIcon(skill: string) {
@@ -31,46 +32,16 @@ export default function About() {
           <InnerWrapper>
             <div className={styles.aboutContainer}>
               <div className={styles.aboutContent}>
-                <h2 className="subtitle">Front end developer</h2>
-                <p>
-                  I&apos;m a passionate Front End Developer with <strong>over 20 years experience</strong> who focuses
-                  on writing clean, reusable, standards compliant code with accessiblity and best practice firmly in
-                  mind.
-                </p>
-                <p>
-                  With over two decades of experience I&apos;ve worked with many technology stacks however my passion
-                  has always been the front end and overall user experience.
-                </p>
-                <p>
-                  I&apos;m strong proponent of accessiblity and will champion accessible solutions wherever possible.
-                </p>
-
-                <h2 className="subtitle">UX/UI designer</h2>
-                <p>I&apos;ve got a keen interest in UX and design.</p>
-                <p>
-                  Whilst my career has been in development I&apos;ve always had a keen interest in design with a
-                  particular passion for functional, user focussed experiences.
-                </p>
-
-                <h2 className="subtitle">Mentor</h2>
-                <p>
-                  I&apos;m passionate about making the web a better place for everyone and this starts with helping
-                  other developers become the best they can be.
-                </p>
-                <p>
-                  Helping others achieve their potential is highly rewarding and is the only true way to effect any
-                  meanigful change.
-                </p>
-
-                <h2 className="subtitle">Accessibility advocate</h2>
-                <p>
-                  When I say I&apos;m passionate about making the web a better place for everyone I mean EVERYONE,
-                  regardless of any disability.
-                </p>
-                <p>
-                  I&apos;m an outspoken champion of accessiblity. Aside from being the right thing to do good
-                  accessiblity typically leads to a better experience for everyone.
-                </p>
+                {about.map((section) => (
+                  <>
+                    <h2 key={section.title} className="subtitle">
+                      {section.title}
+                    </h2>
+                    {section.text.map((paragraph, index) => (
+                      <p key={index}>{paragraph}</p>
+                    ))}
+                  </>
+                ))}
               </div>
 
               <div className="image">

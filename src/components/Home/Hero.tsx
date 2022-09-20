@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import InnerWrapper from '@components/InnerWrapper';
 import Duck from '@images/duck.jpg';
+import heroText from '@content/heroText';
 
 export default function Hero() {
   return (
@@ -12,9 +13,9 @@ export default function Hero() {
           </div>
 
           <div>
-            <div className="subtitle">Hi!</div>
-            <h1>I&apos;m Jason Newington</h1>
-            <div className="subtitle">Helping to make the web a better place</div>
+            <div className="subtitle">{heroText[0]}</div>
+            <h1>{heroText[1]}</h1>
+            <div className="subtitle">{heroText[2]}</div>
           </div>
         </div>
       </InnerWrapper>
