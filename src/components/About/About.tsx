@@ -19,7 +19,7 @@ export default function About() {
         <section className="section">
           <InnerWrapper>
             <div className={styles.aboutContainer}>
-              <div className={`${styles.aboutContent} readable-content`}>
+              <div className={styles.aboutContent}>
                 <h2 className="subtitle">Front end developer</h2>
                 <p>
                   I&apos;m a passionate Front End Developer with <strong>over 20 years experience</strong> who focuses
@@ -74,7 +74,7 @@ export default function About() {
             <div className={styles.skillsContainer}>
               <h2 className="h4">Technical skills</h2>
 
-              <p className="readable-content">
+              <p className={styles.aboutContent}>
                 I&apos;m always playing with new technologies and frameworks but these represent my core front end
                 technical skills.
               </p>
@@ -123,11 +123,11 @@ export default function About() {
                 </Card>
               </CardGrid>
 
-              <p className="readable-content">
-                I also have experience in a wide range of additional areas and technologies.
-              </p>
+              <div className={styles.aboutContent}>
+                <p>I also have experience in a wide range of additional areas and technologies including:</p>
 
-              <div>NodeJS, PHP, MySQL, Res API, WordPress, SEO, SvelteKit</div>
+                <p>NodeJS, PHP, MySQL, Res API, WordPress, SEO, SvelteKit.</p>
+              </div>
             </div>
           </InnerWrapper>
         </section>

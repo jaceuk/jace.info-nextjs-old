@@ -6,27 +6,28 @@ import About from '@components/Home/About';
 import LatestPosts from '@components/Home/LatestPosts';
 
 interface Props {
-  latestPostsData: PostData[];
+  postsData: PostData[];
 }
 
 interface PostData {
   slug: string;
   excerpt: string;
   title: string;
+  tags: string[];
 }
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
   const numberOfPostsToShow = 4;
-  const latestPostsData = allPostsData.slice(0, numberOfPostsToShow);
+  const postsData = allPostsData.slice(0, numberOfPostsToShow);
   return {
     props: {
-      latestPostsData,
+      postsData,
     },
   };
 }
 
-export default function Home({ latestPostsData }: Props) {
+export default function Home({ postsData }: Props) {
   return (
     <>
       <Head>
@@ -36,7 +37,7 @@ export default function Home({ latestPostsData }: Props) {
       <Layout>
         <Hero />
         <About />
-        <LatestPosts latestPostsData={latestPostsData} />
+        <LatestPosts postsData={postsData} />
       </Layout>
     </>
   );

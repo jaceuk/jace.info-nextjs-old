@@ -5,25 +5,26 @@ import Layout from '@components/Layout';
 import PageTitle from '@components/PageTitle';
 
 interface Props {
-  allPostsData: PostData[];
+  postsData: PostData[];
 }
 
 interface PostData {
   slug: string;
   excerpt: string;
   title: string;
+  tags: string[];
 }
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
+  const postsData = getSortedPostsData();
   return {
     props: {
-      allPostsData,
+      postsData,
     },
   };
 }
 
-export default function Home({ allPostsData }: Props) {
+export default function Home({ postsData }: Props) {
   return (
     <>
       <Head>
@@ -32,7 +33,7 @@ export default function Home({ allPostsData }: Props) {
 
       <Layout>
         <PageTitle title="Blog posts" />
-        <BlogPosts allPostsData={allPostsData} />
+        <BlogPosts postsData={postsData} />
       </Layout>
     </>
   );

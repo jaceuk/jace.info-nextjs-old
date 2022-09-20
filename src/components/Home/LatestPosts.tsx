@@ -9,7 +9,7 @@ import Tag from '@components/Tag';
 import Tags from '@components/Tags';
 
 interface Props {
-  latestPostsData: PostData[];
+  postsData: PostData[];
 }
 
 interface PostData {
@@ -19,14 +19,14 @@ interface PostData {
   tags: string[];
 }
 
-export default function LatestPosts({ latestPostsData }: Props) {
+export default function LatestPosts({ postsData }: Props) {
   return (
     <section className="section">
       <InnerWrapper>
         <BlogPostsTitle />
 
         <CardGrid>
-          {latestPostsData.map(({ slug, excerpt, title, tags }: PostData) => (
+          {postsData.map(({ slug, excerpt, title, tags }: PostData) => (
             <Card key={slug}>
               <h2 className="h3">
                 <Link href={`/blog/${slug}`}>

@@ -46,7 +46,7 @@ export default function Navbar() {
             </Link>
 
             <Link href="/blog">
-              <a className={router.pathname === '/blog' ? styles.active : ''}>
+              <a className={router.pathname.includes('/blog') ? styles.active : ''}>
                 <div className={styles.text}>Blog</div>
                 <div className={styles.underline}></div>
               </a>
