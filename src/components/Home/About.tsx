@@ -11,7 +11,11 @@ export default function About() {
       <InnerWrapper>
         <CardGrid>
           <Card>
-            <h2>About me</h2>
+            <h2>
+              <Link href="/about">
+                <a>About me</a>
+              </Link>
+            </h2>
             <p>I&apos;m a Front End Developer with an eye for UX and a passion for accessibility and helping people.</p>
             <Link href="/about">
               <a>
@@ -24,7 +28,11 @@ export default function About() {
           </Card>
 
           <Card>
-            <h2>Projects</h2>
+            <h2>
+              <Link href="/projects">
+                <a>Projects</a>
+              </Link>
+            </h2>
             <p>
               I&apos;ve lost count of the amount of projects I&apos;ve worked on but here are some examples of my more
               recent ones.

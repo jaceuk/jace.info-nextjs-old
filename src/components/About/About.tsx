@@ -11,8 +11,19 @@ import CSS from '@components/SVGs/CSS';
 import HTML from '@components/SVGs/HTML';
 import Accessibility from '@components/SVGs/Accessibility';
 import styles from './About.module.scss';
+import secondarySkills from '@content/secondarySkills';
+import primarySkills from '@content/primarySkills';
 
 export default function About() {
+  function getIcon(skill: string) {
+    if (skill === 'Accessibility') return <Accessibility />;
+    if (skill === 'HTML') return <HTML />;
+    if (skill === 'CSS') return <CSS />;
+    if (skill === 'React') return <React />;
+    if (skill === 'JavaScript') return <JavaScript />;
+    if (skill === 'TypeScript') return <TypeScript />;
+  }
+
   return (
     <>
       <main>
@@ -80,53 +91,24 @@ export default function About() {
               </p>
 
               <CardGrid>
-                <Card>
-                  <SkillTitle title="Accessibility" icon={<Accessibility />} />
-                  <p>
-                    I&apos;m a big advocate of accessiblity and have a wide range of experience of producing accessible
-                    websites and apps.
-                  </p>
-                </Card>
-
-                <Card>
-                  <SkillTitle title="CSS" icon={<CSS />} />
-                  <p>
-                    I&apos;ve worked with everything from plain CSS and SASS through to React with Styled Components and
-                    CSS Modules.
-                  </p>
-                </Card>
-
-                <Card>
-                  <SkillTitle title="HTML" icon={<HTML />} />
-                  <p>
-                    I&apos;m intimately familiar with HTML, a skill that seems to have fallen by the wayside in the
-                    abstracted world of front end frameworks.
-                  </p>
-                </Card>
-
-                <Card>
-                  <SkillTitle title="JavaScript" icon={<JavaScript />} />
-                  <p>I&apos;ve worked with vanilla Javascript along with libraries such as jQuery.</p>
-                </Card>
-
-                <Card>
-                  <SkillTitle title="React" icon={<React />} />
-                  <p>
-                    I&apos;ve worked extensively with ReactJS and various associated frameworks such as NextJS and
-                    Gatsby.
-                  </p>
-                </Card>
-
-                <Card>
-                  <SkillTitle title="TypeScript" icon={<TypeScript />} />
-                  <p>I&apos;ve been using TypeScript in pretty much every project.</p>
-                </Card>
+                {primarySkills.map((skill) => (
+                  <Card key={skill.title}>
+                    <SkillTitle title={skill.title} icon={getIcon(skill.title)} />
+                    {skill.text}
+                  </Card>
+                ))}
               </CardGrid>
 
               <div className={styles.aboutContent}>
                 <p>I also have experience in a wide range of additional areas and technologies including:</p>
+              </div>
 
-                <p>NodeJS, PHP, MySQL, Res API, WordPress, SEO, SvelteKit.</p>
+              <div className={styles.moreSkills}>
+                {secondarySkills.sort().map((skill) => (
+                  <span key={skill} className={styles.skill}>
+                    {skill}
+                  </span>
+                ))}
               </div>
             </div>
           </InnerWrapper>

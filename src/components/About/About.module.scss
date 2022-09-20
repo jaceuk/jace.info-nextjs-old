@@ -19,3 +19,17 @@
   gap: var(--s-2-4);
   max-width: 750px;
 }
+
+.moreSkills {
+  display: flex;
+  flex-direction: row;
+  gap: var(--s-1-2);
+  flex-wrap: wrap;
+
+  .skill {
+    font-weight: var(--fw-semi-bold);
+    border: 1px solid var(--c-background);
+    border-radius: var(--s-1-2);
+    padding: var(--s-1-2) var(--s-2-4);
+  }
+}
