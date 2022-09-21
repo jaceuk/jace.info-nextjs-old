@@ -14,10 +14,15 @@
   gap: var(--s-4-5);
 }
 
-.aboutContent {
+.content {
   display: grid;
-  gap: var(--s-2-4);
+  gap: var(--s-4-5);
   max-width: 750px;
+
+  .section {
+    display: grid;
+    gap: var(--s-2-4);
+  }
 }
 
 .moreSkills {

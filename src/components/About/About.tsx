@@ -31,16 +31,14 @@ export default function About() {
         <section className="section">
           <InnerWrapper>
             <div className={styles.aboutContainer}>
-              <div className={styles.aboutContent}>
+              <div className={styles.content}>
                 {about.map((section) => (
-                  <>
-                    <h2 key={section.title} className="subtitle">
-                      {section.title}
-                    </h2>
+                  <div key={section.title} className={styles.section}>
+                    <h2 className="h3">{section.title}</h2>
                     {section.text.map((paragraph, index) => (
                       <p key={index}>{paragraph}</p>
                     ))}
-                  </>
+                  </div>
                 ))}
               </div>
 
