@@ -1,0 +1,17 @@
+{
+  "title": "ESO Builder",
+  "url": "https://esobuilder.com/",
+  "slug": "eso-builder",
+  "intro": "A companion web app to support The Elder Scrolls Online, a popular massively multiplayer online roleplaying game.",
+  "type": "Web app",
+  "skills": {
+    "primary": ["HTML", "React", "CSS/Sass", "JavaScript"],
+    "secondary": ["MySQL", "PHP", "REST API", "Slim", "UX/UI"]
+  },
+  "text": [
+    "This web app allows players to plan out their in game characters without being in the game itself.",
+    "The web app is powered be data retrieved from a REST API built using the Slim micro framework for PHP.",
+    "I was responsible for all aspects of this project."
+  ],
+  "lighthouseScores": ["93", "97", "100", "100"]
+}

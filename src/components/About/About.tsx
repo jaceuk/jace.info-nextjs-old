@@ -11,9 +11,9 @@ import CSS from '@components/SVGs/CSS';
 import HTML from '@components/SVGs/HTML';
 import Accessibility from '@components/SVGs/Accessibility';
 import styles from './About.module.scss';
-import secondarySkills from '@content/secondarySkills';
-import primarySkills from '@content/primarySkills';
-import about from '@content/about';
+import secondarySkills from '@content/secondarySkills.json';
+import primarySkills from '@content/primarySkills.json';
+import about from '@content/about.json';
 
 export default function About() {
   function getIcon(skill: string) {

@@ -1,0 +1,16 @@
+{
+  "title": "VIP Dine",
+  "url": "https://www.vip-dine.com/",
+  "slug": "vip-dine",
+  "intro": "A brochureware website for a company that offers a low cost way for restaurants to take table reservations and food orders online.",
+  "type": "Website",
+  "skills": {
+    "primary": ["HTML", "React", "CSS/Sass", "JavaScript", "Gatsby"],
+    "secondary": ["UX/UI"]
+  },
+  "text": [
+    "I was responsible for the design and development of this site using Gatsby and React as the core front end technologies.",
+    "The registration page features a custom React component that interfaces with several third party APIs including address lookup, SMS verification and Stripe payment."
+  ],
+  "lighthouseScores": ["92", "95", "92", "90"]
+}
