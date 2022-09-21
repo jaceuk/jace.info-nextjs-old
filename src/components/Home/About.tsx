@@ -4,7 +4,7 @@ import IconLink from '@components/IconLink';
 import InnerWrapper from '@components/InnerWrapper';
 import { ArrowRight } from 'iconoir-react';
 import Link from 'next/link';
-import homeAbout from '@content/homeAbout';
+import homeAbout from '@content/homeAbout.json';
 
 export default function About() {
   return (
