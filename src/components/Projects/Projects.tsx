@@ -31,7 +31,7 @@ export default function Projects() {
               I’ve lost count of the amount of projects I’ve worked on but here are some examples of my more recent
               ones.
             </p>
-            {projects.map((project, index) => (
+            {projects.map((project) => (
               <div key={project.title} className={styles.project}>
                 <div className={styles.image}>
                   <Link href={`/project/${project.slug}`}>
