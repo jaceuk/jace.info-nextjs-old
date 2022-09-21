@@ -54,11 +54,10 @@ export default function About() {
         <section className="section">
           <InnerWrapper>
             <div className={styles.skillsContainer}>
-              <h2 className="h4">Technical skills</h2>
+              <h2 className="h4">Languages, skills and tools</h2>
 
               <p className={styles.aboutContent}>
-                I&apos;m always playing with new technologies and frameworks but these represent my core front end
-                technical skills.
+                I&apos;m always playing with new things but these represent my core front end competencies.
               </p>
 
               <CardGrid>
@@ -71,7 +70,7 @@ export default function About() {
               </CardGrid>
 
               <div className={styles.aboutContent}>
-                <p>I also have experience in a wide range of additional areas and technologies including:</p>
+                <p>I also have a wide range of additional skills including:</p>
               </div>
 
               <div className={styles.moreSkills}>

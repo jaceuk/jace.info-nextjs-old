@@ -40,4 +40,7 @@
   --fw-medium: 500;
   --fw-semi-bold: 600;
   --fw-bold: 700;
+
+  /* misc */
+  --max-readable-width: 750px;
 }

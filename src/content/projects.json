@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Dogs to Adopt",
+    "type": "Website",
+    "text": "I'm a Front End Developer with an eye for UX and a passion for accessibility and helping people.",
+    "slug": "dogs-to-adopt"
+  },
+  {
+    "title": "VIP Dine",
+    "type": "Website",
+    "text": "A brochureware website for a company that offers a low cost way for restaurants to take table reservations and food orders online.",
+    "slug": "vip-dine"
+  },
+  {
+    "title": "ESO Builder",
+    "type": "Web app",
+    "text": "A companion web app to support The Elder Scrolls Online, a popular massively multiplayer online roleplaying game.",
+    "slug": "eso-builder"
+  },
+  {
+    "title": "EVO Home Services",
+    "type": "Website",
+    "text": "High perfoming bespoke websites with the specific goal of going head-to-head with the competition in Google local searches.",
+    "slug": "evo-home-services"
+  },
+  {
+    "title": "Wakefield Security",
+    "type": "Website",
+    "text": "A brochureware website for a company that provides innovative security and fire safety systems.",
+    "slug": "wakefield-security"
+  }
+]

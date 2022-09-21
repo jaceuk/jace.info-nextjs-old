@@ -73,7 +73,7 @@ a {
 }
 
 .readable-content {
-  max-width: 750px;
+  max-width: var(--max-readable-width);
 }
 
 .markdown {
