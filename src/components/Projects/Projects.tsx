@@ -27,6 +27,10 @@ export default function Projects() {
       <section className="section">
         <InnerWrapper>
           <div className={styles.container}>
+            <p className={styles.intro}>
+              I’ve lost count of the amount of projects I’ve worked on but here are some examples of my more recent
+              ones.
+            </p>
             {projects.map((project, index) => (
               <div key={project.title} className={styles.project}>
                 <div className={styles.image}>

@@ -4,6 +4,10 @@
   gap: var(--s-4-5);
 }
 
+.intro {
+  max-width: var(--max-readable-width);
+}
+
 .project {
   display: grid;
   gap: var(--s-2-4);
