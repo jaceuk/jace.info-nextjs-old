@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import { getSortedData } from '@lib/posts';
-import BlogPosts from '@components/Blog/BlogPosts';
+import { getSortedData } from '@lib/projects';
+import Projects from '@components/Projects';
 import Layout from '@components/Layout';
 import PageTitle from '@components/PageTitle';
 
@@ -32,8 +32,8 @@ export default function Home({ data }: Props) {
       </Head>
 
       <Layout>
-        <PageTitle title="Blog posts" />
-        <BlogPosts data={data} />
+        <PageTitle title="Example projects" />
+        <Projects data={data} />
       </Layout>
     </>
   );

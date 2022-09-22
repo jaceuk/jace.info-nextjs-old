@@ -1,5 +1,5 @@
 import Layout from '@components/Layout';
-import { getAllSlugs, getData } from '@lib/posts';
+import { getAllSlugs, getData } from '@lib/projects';
 import Head from 'next/head';
 import InnerWrapper from '@components/InnerWrapper';
 import PageTitle from '@components/PageTitle';

@@ -5,23 +5,19 @@ import InnerWrapper from '@components/InnerWrapper';
 import { ArrowRight } from 'iconoir-react';
 import Link from 'next/link';
 import styles from './Projects.module.scss';
-import projects from '@content/projects.json';
 
-import dogsToAdoptImage from '@images/dogs-to-adopt.jpg';
-import esoBuilderImage from '@images/eso-builder.jpg';
-import evoHomeServicesImage from '@images/evo-home-services.jpg';
-import vipDineImage from '@images/vip-dine.jpg';
-import wakefieldSecurityImage from '@images/wakefield-security.jpg';
-
-function getImage(slug: string) {
-  if (slug === 'dogs-to-adopt') return dogsToAdoptImage;
-  if (slug === 'eso-builder') return esoBuilderImage;
-  if (slug === 'evo-home-services') return evoHomeServicesImage;
-  if (slug === 'vip-dine') return vipDineImage;
-  if (slug === 'wakefield-security') return wakefieldSecurityImage;
+interface Props {
+  data: PostData[];
 }
 
-export default function Projects() {
+interface PostData {
+  slug: string;
+  excerpt: string;
+  title: string;
+  type: string;
+}
+
+export default function Projects({ data }: Props) {
   return (
     <>
       <section className="section">
@@ -31,30 +27,28 @@ export default function Projects() {
               I’ve lost count of the amount of projects I’ve worked on but here are some examples of my more recent
               ones.
             </p>
-            {projects.map((project) => (
-              <div key={project.title} className={styles.project}>
+            {data.map(({ slug, excerpt, title, type }: PostData) => (
+              <div key={slug} className={styles.project}>
                 <div className={styles.image}>
-                  <Link href={`/project/${project.slug}`}>
-                    <a>
-                      <Image src={getImage(project.slug)} alt="" />
-                    </a>
+                  <Link href={`/projects/${slug}`}>
+                    <a>{/* <Image src={} alt="" /> */}</a>
                   </Link>
                 </div>
 
                 <div className={styles.card}>
                   <Card>
                     <div className={styles.title}>
-                      <div className={styles.type}>{project.type}</div>
+                      <div className={styles.type}>{type}</div>
                       <h2>
-                        <Link href={`/project/${project.slug}`}>
-                          <a>{project.title}</a>
+                        <Link href={`/projects/${slug}`}>
+                          <a>{title}</a>
                         </Link>
                       </h2>
                     </div>
 
-                    <p>{project.text}</p>
+                    <p>{excerpt}</p>
 
-                    <Link href={`/project/${project.slug}`}>
+                    <Link href={`/projects/${slug}`}>
                       <a>
                         <IconLink>
                           Read more

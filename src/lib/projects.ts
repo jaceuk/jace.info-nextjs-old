@@ -4,7 +4,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
-const dataDirectory = path.join(process.cwd(), 'src/_posts');
+const dataDirectory = path.join(process.cwd(), 'src/_projects');
 
 export function getSortedData() {
   // Get file names under /_posts

@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Layout from '@components/Layout';
-import { getSortedPostsData } from '@lib/posts';
+import { getSortedData } from '@lib/posts';
 import Hero from '@components/Home/Hero';
 import About from '@components/Home/About';
 import LatestPosts from '@components/Home/LatestPosts';
@@ -17,7 +17,7 @@ interface PostData {
 }
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
+  const allPostsData = getSortedData();
   const numberOfPostsToShow = 4;
   const postsData = allPostsData.slice(0, numberOfPostsToShow);
   return {

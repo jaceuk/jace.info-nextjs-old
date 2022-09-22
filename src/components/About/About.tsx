@@ -54,7 +54,7 @@ export default function About() {
             <div className={styles.skillsContainer}>
               <h2 className="h4">Languages, skills and tools</h2>
 
-              <p className={styles.aboutContent}>
+              <p className={styles.content}>
                 I&apos;m always playing with new things but these represent my core front end competencies.
               </p>
 
@@ -67,7 +67,7 @@ export default function About() {
                 ))}
               </CardGrid>
 
-              <div className={styles.aboutContent}>
+              <div className={styles.content}>
                 <p>I also have a wide range of additional skills including:</p>
               </div>
 

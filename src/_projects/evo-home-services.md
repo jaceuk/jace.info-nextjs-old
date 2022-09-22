@@ -1,0 +1,24 @@
+---
+title: 'EVO Home Services'
+date: '2222-09-19'
+url: 'https://www.evo-homeservices.co.uk/'
+excerpt: 'High perfoming bespoke websites with the specific goal of going head-to-head with the competition in Google local searches.'
+type: 'Website'
+primarySkills: ['HTML', 'CSS/Sass', 'JavaScript']
+secondarySkills: ['PHP', 'MySQL', 'SEO', 'UX/UI', 'Slim', 'REST API']
+lighthouseScores: ['93', '88', '83', '91']
+---
+
+This project involved designing and building two separate dynamically generated websites along with a single page portal site.
+
+The goal of this project was to increase lead generation by aggressively targeting local search results.
+
+The sites mix content templates with location information and reviews to dynamically create a large number of unique and relevant pages.
+
+The site gets it's data from a REST API built using the Slim micro framework for PHP with a bespoke secure admin area which allows the client to add their Checkatrade reviews to the site.
+
+They rank extremely well for a large number of search terms such as Boiler Servicing Handcross, Central Heating Southwater, and Power Flushing Redhill.
+
+Almost immediately there was an uptick in enquiries from the websites and a few months later the monthly website enquiries had increased by approximately 9,000 percent (no, that's not a typo!). These are all fully qualified enquiries, no spam!
+
+I was responsible for all aspects of this project.
