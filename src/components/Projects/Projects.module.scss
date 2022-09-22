@@ -22,6 +22,7 @@
     border-radius: var(--s-1-4);
     overflow: hidden;
     aspect-ratio: 16/9;
+    position: relative;
 
     @media (min-width: 768px) {
       grid-column: 1 / 3;

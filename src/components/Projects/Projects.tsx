@@ -7,10 +7,10 @@ import Link from 'next/link';
 import styles from './Projects.module.scss';
 
 interface Props {
-  data: PostData[];
+  data: Data[];
 }
 
-interface PostData {
+interface Data {
   slug: string;
   excerpt: string;
   title: string;
@@ -27,11 +27,13 @@ export default function Projects({ data }: Props) {
               I’ve lost count of the amount of projects I’ve worked on but here are some examples of my more recent
               ones.
             </p>
-            {data.map(({ slug, excerpt, title, type }: PostData) => (
+            {data.map(({ slug, excerpt, title, type }: Data) => (
               <div key={slug} className={styles.project}>
                 <div className={styles.image}>
                   <Link href={`/projects/${slug}`}>
-                    <a>{/* <Image src={} alt="" /> */}</a>
+                    <a>
+                      <Image src={`/assets/images/${slug}.jpg`} alt="" layout="fill" objectFit="cover" />
+                    </a>
                   </Link>
                 </div>
 

@@ -5,10 +5,10 @@ import Layout from '@components/Layout';
 import PageTitle from '@components/PageTitle';
 
 interface Props {
-  data: PostData[];
+  data: Data[];
 }
 
-interface PostData {
+interface Data {
   slug: string;
   excerpt: string;
   title: string;
