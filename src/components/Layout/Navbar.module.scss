@@ -3,6 +3,8 @@
   align-items: center;
   justify-content: space-between;
   padding: var(--s-1-2) 0;
+  z-index: 200;
+  position: relative;
 
   .logo {
     display: flex;
@@ -21,17 +23,16 @@
     display: flex;
     align-items: center;
     gap: var(--s-2-4);
-    display: none;
-
-    @media (min-width: 768px) {
-      display: flex;
-    }
 
     a {
       font-size: var(--fs-nav);
       font-weight: var(--fw-bold);
-      display: grid;
       transition: var(--transition);
+      display: none;
+
+      @media (min-width: 768px) {
+        display: grid;
+      }
 
       &:hover {
         color: var(--c-accent);
@@ -53,6 +54,19 @@
         .underline {
           background-color: var(--c-accent);
         }
+      }
+    }
+
+    button {
+      display: flex;
+      margin: 0;
+      border: 0;
+      padding: 0;
+      font-size: var(--fs-h4);
+      background: none;
+
+      @media (min-width: 768px) {
+        display: none;
       }
     }
   }

@@ -1,10 +1,19 @@
+import * as React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import InnerWrapper from '@components/InnerWrapper';
 import styles from './Navbar.module.scss';
+import { Menu } from 'iconoir-react';
+import MobileNav from './MobileNav';
 
 export default function Navbar() {
   const router = useRouter();
+  const [showMobileNav, setShowMobileNav] = React.useState(false);
+
+  function handleClick() {
+    setShowMobileNav((current) => !current);
+    document.body.classList.toggle('no-scroll');
+  }
 
   return (
     <div>
@@ -58,9 +67,15 @@ export default function Navbar() {
                 <div className={styles.underline}></div>
               </a>
             </Link>
+
+            <button onClick={handleClick}>
+              <Menu />
+            </button>
           </nav>
         </div>
       </InnerWrapper>
+
+      {showMobileNav && <MobileNav />}
     </div>
   );
 }

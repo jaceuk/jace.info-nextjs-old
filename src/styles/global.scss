@@ -42,3 +42,7 @@ a {
     font-weight: var(--fw-regular);
   }
 }
+
+.no-scroll {
+  overflow: hidden;
+}
