@@ -11,7 +11,7 @@ export default function Home() {
       </Head>
 
       <Layout>
-        <PageTitle title="Contact me" />
+        <PageTitle title="Let's talk" />
         <Contact />
       </Layout>
     </>

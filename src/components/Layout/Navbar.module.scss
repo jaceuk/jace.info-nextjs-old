@@ -31,7 +31,7 @@
       font-size: var(--fs-nav);
       font-weight: var(--fw-bold);
       display: grid;
-      transition: all 0.2s ease;
+      transition: var(--transition);
 
       &:hover {
         color: var(--c-accent);
