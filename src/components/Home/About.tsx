@@ -1,9 +1,8 @@
+import Link from 'next/link';
 import Card from '@components/Card';
 import CardGrid from '@components/CardGrid';
-import IconLink from '@components/IconLink';
+import ReadMore from '@components/ReadMore';
 import InnerWrapper from '@components/InnerWrapper';
-import { ArrowRight } from 'iconoir-react';
-import Link from 'next/link';
 import homeAbout from '@content/homeAbout.json';
 
 export default function About() {
@@ -19,14 +18,7 @@ export default function About() {
                 </Link>
               </h2>
               <p>{section.text}</p>
-              <Link href={section.link}>
-                <a>
-                  <IconLink>
-                    Read more
-                    <ArrowRight />
-                  </IconLink>
-                </a>
-              </Link>
+              <ReadMore href={section.link} />
             </Card>
           ))}
         </CardGrid>

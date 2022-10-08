@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Card from '@components/Card';
-import IconLink from '@components/IconLink';
+import ReadMore from '@components/ReadMore';
 import InnerWrapper from '@components/InnerWrapper';
 import { ArrowRight } from 'iconoir-react';
 import Link from 'next/link';
@@ -50,14 +50,7 @@ export default function Projects({ data }: Props) {
 
                     <p>{excerpt}</p>
 
-                    <Link href={`/projects/${slug}`}>
-                      <a>
-                        <IconLink>
-                          Read more
-                          <ArrowRight />
-                        </IconLink>
-                      </a>
-                    </Link>
+                    <ReadMore href={`/projects/${slug}`} />
                   </Card>
                 </div>
               </div>

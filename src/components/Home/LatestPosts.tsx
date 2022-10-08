@@ -3,7 +3,7 @@ import Card from '@components/Card';
 import CardGrid from '@components/CardGrid';
 import InnerWrapper from '@components/InnerWrapper';
 import BlogPostsTitle from './BlogPostsTitle';
-import IconLink from '@components/IconLink';
+import ReadMore from '@components/ReadMore';
 import { ArrowRight } from 'iconoir-react';
 import Tag from '@components/Tag';
 import Tags from '@components/Tags';
@@ -47,14 +47,7 @@ export default function LatestPosts({ postsData }: Props) {
               )}
 
               <p>{excerpt}</p>
-              <Link href={`/blog/${slug}`}>
-                <a>
-                  <IconLink>
-                    Read more
-                    <ArrowRight />
-                  </IconLink>
-                </a>
-              </Link>
+              <ReadMore href={`/blog/${slug}`} />
             </Card>
           ))}
         </CardGrid>

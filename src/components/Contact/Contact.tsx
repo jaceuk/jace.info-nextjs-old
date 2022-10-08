@@ -82,10 +82,9 @@ export default function Contact() {
               <Alert type="error">
                 There was a problem sending your message, please try again. If the problem perists please email
                 info@jace.info.
-                {form.message}
               </Alert>
             ) : (
-              form.state === 'success' && <Alert type="success">Sent successfully</Alert>
+              form.state === 'success' && <Alert type="success">Your message was sent successfully</Alert>
             )}
 
             <form onSubmit={(event) => onSubmitForm(event)} className={styles.form}>
