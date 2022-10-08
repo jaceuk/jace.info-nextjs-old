@@ -3,16 +3,22 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import InnerWrapper from '@components/InnerWrapper';
 import styles from './Navbar.module.scss';
-import { Menu } from 'iconoir-react';
+import { Cancel, HalfMoon, Menu, SunLight } from 'iconoir-react';
 import MobileNav from './MobileNav';
 
 export default function Navbar() {
   const router = useRouter();
   const [showMobileNav, setShowMobileNav] = React.useState(false);
+  const [darkMode, setDarkMode] = React.useState(false);
 
-  function handleClick() {
+  function handleMenuClick() {
     setShowMobileNav((current) => !current);
     document.body.classList.toggle('no-scroll');
+  }
+
+  function handleModeClick() {
+    setDarkMode((current) => !current);
+    document.body.classList.toggle('dark-mode');
   }
 
   return (
@@ -33,6 +39,8 @@ export default function Navbar() {
           </Link>
 
           <nav>
+            <button onClick={handleModeClick}>{darkMode ? <SunLight /> : <HalfMoon />}</button>
+
             <Link href="/">
               <a className={router.pathname === '/' ? styles.active : ''}>
                 <div className={styles.text}>Home</div>
@@ -68,8 +76,8 @@ export default function Navbar() {
               </a>
             </Link>
 
-            <button onClick={handleClick}>
-              <Menu />
+            <button className={styles.menu} onClick={handleMenuClick}>
+              {showMobileNav ? <Cancel /> : <Menu />}
             </button>
           </nav>
         </div>

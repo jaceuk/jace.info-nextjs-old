@@ -62,11 +62,15 @@
       margin: 0;
       border: 0;
       padding: 0;
-      font-size: var(--fs-h4);
       background: none;
+      color: var(--c-nearly-black);
 
-      @media (min-width: 768px) {
-        display: none;
+      &.menu {
+        font-size: var(--fs-h4);
+
+        @media (min-width: 768px) {
+          display: none;
+        }
       }
     }
   }
