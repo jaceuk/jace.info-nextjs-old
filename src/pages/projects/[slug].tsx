@@ -8,6 +8,7 @@ import Project from '@components/Project';
 interface Props {
   data: {
     slug: string;
+    type: string;
     date: string;
     title: string;
     contentHtml: string;
@@ -38,7 +39,7 @@ export default function Post({ data }: Props) {
         <title>{data.title}</title>
       </Head>
 
-      <PageTitle title={data.title} />
+      <PageTitle title={data.title} preTitle={data.type} />
 
       <Project data={data} />
     </Layout>
