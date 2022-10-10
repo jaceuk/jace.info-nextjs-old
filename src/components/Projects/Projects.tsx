@@ -2,7 +2,6 @@ import Image from 'next/image';
 import Card from '@components/Card';
 import ReadMore from '@components/ReadMore';
 import InnerWrapper from '@components/InnerWrapper';
-import { ArrowRight } from 'iconoir-react';
 import Link from 'next/link';
 import styles from './Projects.module.scss';
 

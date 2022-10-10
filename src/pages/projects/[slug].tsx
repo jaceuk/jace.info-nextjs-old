@@ -3,6 +3,7 @@ import { getAllSlugs, getData } from '@lib/projects';
 import Head from 'next/head';
 import InnerWrapper from '@components/InnerWrapper';
 import PageTitle from '@components/PageTitle';
+import Project from '@components/Project';
 
 interface Props {
   data: {
@@ -39,11 +40,7 @@ export default function Post({ data }: Props) {
 
       <PageTitle title={data.title} />
 
-      <main className="section">
-        <InnerWrapper>
-          <div className="markdown readable-content" dangerouslySetInnerHTML={{ __html: data.contentHtml }} />
-        </InnerWrapper>
-      </main>
+      <Project data={data} />
     </Layout>
   );
 }
