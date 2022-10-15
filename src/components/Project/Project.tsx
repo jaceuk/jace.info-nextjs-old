@@ -1,7 +1,10 @@
+import * as React from 'react';
+import Link from 'next/link';
 import InnerWrapper from '@components/InnerWrapper';
 import Image from 'next/image';
 import Lighthouse from './Lighthouse';
 import styles from './Project.module.scss';
+import { OpenNewWindow } from 'iconoir-react';
 
 interface Props {
   data: {
@@ -18,6 +21,11 @@ interface Props {
 }
 
 export default function Project({ data }: Props) {
+  const [imageSize, setSmageSize] = React.useState({
+    width: 1,
+    height: 1,
+  });
+
   return (
     <>
       <section className="section">
@@ -29,13 +37,28 @@ export default function Project({ data }: Props) {
               </div>
 
               <div className={styles.links}>
-                <a href="/">Screenshot</a>
-                <a href="/">Live site</a>
+                <Link href="#screenshots">
+                  <button className={styles.iconLink}>
+                    View screenshots
+                    <OpenNewWindow />
+                  </button>
+                </Link>
+
+                {data.url && (
+                  <Link href={data.url}>
+                    <a target="_blank">
+                      <div className={styles.iconLink}>
+                        Visit live site
+                        <OpenNewWindow />
+                      </div>
+                    </a>
+                  </Link>
+                )}
               </div>
             </div>
 
             <div className={styles.text}>
-              <h2>Overview</h2>
+              <h2 className="h3">Overview</h2>
               <div className="markdown" dangerouslySetInnerHTML={{ __html: data.contentHtml }} />
 
               <h3>Skills used</h3>
@@ -59,6 +82,30 @@ export default function Project({ data }: Props) {
       <section className="section">
         <InnerWrapper>
           <Lighthouse scores={data.lighthouseScores} />
+        </InnerWrapper>
+      </section>
+
+      <section id="screenshots" className="section">
+        <InnerWrapper>
+          <div className={styles.screenshots}>
+            <h2 className="h3">Screenshots</h2>
+            <div className={styles.screenshot}>
+              <Image
+                src={`/assets/images/${data.slug}-screenshot.jpg`}
+                alt=""
+                layout="responsive"
+                objectFit="cover"
+                onLoadingComplete={(target) => {
+                  setSmageSize({
+                    width: target.naturalWidth,
+                    height: target.naturalHeight,
+                  });
+                }}
+                width={imageSize.width}
+                height={imageSize.height}
+              />
+            </div>
+          </div>
         </InnerWrapper>
       </section>
     </>

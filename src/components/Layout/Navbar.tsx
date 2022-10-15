@@ -21,8 +21,12 @@ export default function Navbar() {
     document.body.classList.toggle('dark-mode');
   }
 
+  React.useEffect(() => {
+    document.body.classList.remove('no-scroll');
+  }, []);
+
   return (
-    <div>
+    <div className={styles.navbarContainer}>
       <InnerWrapper>
         <div className={styles.navbar}>
           <Link href="/">

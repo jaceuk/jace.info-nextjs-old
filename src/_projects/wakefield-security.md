@@ -1,7 +1,6 @@
 ---
 title: 'Wakefield Security'
 date: '2222-09-18'
-url: 'https://www.wakefield-security.co.uk/'
 excerpt: 'A brochureware website for a company that provides innovative security and fire safety systems.'
 type: 'Website'
 primarySkills: ['HTML', 'CSS/Sass', 'JavaScript']
