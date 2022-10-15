@@ -26,6 +26,15 @@
   --c-good: #008341;
   --c-average: rgb(211, 123, 0);
   --c-poor: #c74845;
+  --c-lighthouseGood: #00cc66;
+  --c-lighthouseGoodDark: #028802;
+  --c-lighthouseGoodPale: #e6faf0;
+  --c-lighthouseAverage: #ffaa33;
+  --c-lighthouseAverageDark: #c33300;
+  --c-lighthouseAveragePale: #fff7eb;
+  --c-lighthousePoor: #f33;
+  --c-lighthousePoorDark: #c00;
+  --c-lighthousePoorPale: #ffebeb;
 
   /* font size */
   --fs-h1: clamp(4.8rem, 2.6182rem + 5.8182vw, 9.6rem);
