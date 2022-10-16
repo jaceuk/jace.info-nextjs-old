@@ -11,6 +11,7 @@ interface Props {
     date: string;
     title: string;
     content: string;
+    tags: string[];
   };
 }
 
