@@ -2,7 +2,7 @@
 title: 'Generating unique IDs in React'
 date: '2022-06-11'
 excerpt: 'Unique IDs are essential for writing accessible code and now, with React 18, things just got allot easier.'
-tags: ['React']
+tags: ['react']
 ---
 
 Whilst the web at large has slowly learned not to pepper markup with IDs they are still required for writing accessible code and these IDs must be unique on any given page or else everything falls apart.

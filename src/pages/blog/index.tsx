@@ -17,7 +17,7 @@ interface Data {
 }
 
 export const getStaticProps = async () => {
-  const allPosts = getAllPosts(['title', 'excerpt', 'slug', 'tags', 'date']);
+  const allPosts = getAllPosts(['title', 'excerpt', 'slug', 'tags', 'date'], 'blog');
 
   return {
     props: { allPosts },

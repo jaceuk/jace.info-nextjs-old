@@ -1,33 +1,33 @@
 import Head from 'next/head';
 import Layout from '@components/Layout';
-import { getSortedData } from '@lib/projects';
 import Hero from '@components/Home/Hero';
 import About from '@components/Home/About';
 import LatestPosts from '@components/Home/LatestPosts';
+import { getAllPosts } from '@lib/posts';
 
 interface Props {
-  postsData: PostData[];
+  posts: Data[];
 }
 
-interface PostData {
+interface Data {
   slug: string;
   excerpt: string;
   title: string;
   tags: string[];
+  date: string;
 }
 
-export async function getStaticProps() {
-  const allPostsData = getSortedData();
+export const getStaticProps = async () => {
+  const allPosts = getAllPosts(['title', 'excerpt', 'slug', 'tags', 'date'], 'blog');
   const numberOfPostsToShow = 4;
-  const postsData = allPostsData.slice(0, numberOfPostsToShow);
-  return {
-    props: {
-      postsData,
-    },
-  };
-}
+  const posts = allPosts.slice(0, numberOfPostsToShow);
 
-export default function Home({ postsData }: Props) {
+  return {
+    props: { posts },
+  };
+};
+
+export default function Home({ posts }: Props) {
   return (
     <>
       <Head>
@@ -37,7 +37,7 @@ export default function Home({ postsData }: Props) {
       <Layout>
         <Hero />
         <About />
-        <LatestPosts postsData={postsData} />
+        <LatestPosts posts={posts} />
       </Layout>
     </>
   );

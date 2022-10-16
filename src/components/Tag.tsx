@@ -8,6 +8,7 @@ import Svelte from '@components/SVGs/Svelte';
 import NextJS from '@components/SVGs/NextJS';
 import Git from '@components/SVGs/Git';
 import styles from './Tag.module.scss';
+import { readableTags } from '@lib/constants';
 
 interface Props {
   tag: string;
@@ -16,16 +17,16 @@ interface Props {
 export default function Tag({ tag }: Props) {
   return (
     <div className={styles.tag}>
-      {tag === 'React' && <React />}
-      {tag === 'JavaScript' && <JavaScript />}
-      {tag === 'TypeScript' && <TypeScript />}
-      {tag === 'CSS' && <CSS />}
-      {tag === 'HTML' && <HTML />}
-      {tag === 'Accessibility' && <Accessibility />}
-      {tag === 'SvelteKit' && <Svelte />}
-      {tag === 'NextJS' && <NextJS />}
-      {tag === 'Git' && <Git />}
-      {tag}
+      {tag === 'react' && <React />}
+      {tag === 'javascript' && <JavaScript />}
+      {tag === 'typescript' && <TypeScript />}
+      {tag === 'css' && <CSS />}
+      {tag === 'html' && <HTML />}
+      {tag === 'accessibility' && <Accessibility />}
+      {tag === 'sveltekit' && <Svelte />}
+      {tag === 'nextjs' && <NextJS />}
+      {tag === 'git' && <Git />}
+      {readableTags[tag]}
     </div>
   );
 }

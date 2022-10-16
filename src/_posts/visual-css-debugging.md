@@ -2,7 +2,7 @@
 title: 'Visual CSS debugging'
 date: '2022-06-25'
 excerpt: 'This quick tip will make debugging CSS in the browser allot easier.'
-tags: ['CSS']
+tags: ['css']
 ---
 
 Debugging CSS can be time consuming and often involves stepping through divs in devtools to find out where the problem lies however this quick tip will make things allot easier.

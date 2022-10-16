@@ -2,7 +2,7 @@
 title: 'Updating your .gitignore'
 date: '2022-06-30'
 excerpt: 'Find out how to easily add or change a .gitignore for an existing Git repository.'
-tags: ['Git']
+tags: ['git']
 ---
 
 Making changes to your .gitignore file is easy enough but it can be puzzling, when you do your next commit, to see that the newly ignored files are anything but.

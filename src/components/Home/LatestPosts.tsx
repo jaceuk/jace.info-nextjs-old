@@ -4,29 +4,29 @@ import CardGrid from '@components/CardGrid';
 import InnerWrapper from '@components/InnerWrapper';
 import BlogPostsTitle from './BlogPostsTitle';
 import ReadMore from '@components/ReadMore';
-import { ArrowRight } from 'iconoir-react';
 import Tag from '@components/Tag';
 import Tags from '@components/Tags';
 
 interface Props {
-  postsData: PostData[];
+  posts: Post[];
 }
 
-interface PostData {
+interface Post {
   slug: string;
   excerpt: string;
   title: string;
   tags: string[];
+  date: string;
 }
 
-export default function LatestPosts({ postsData }: Props) {
+export default function LatestPosts({ posts }: Props) {
   return (
     <section className="section">
       <InnerWrapper>
         <BlogPostsTitle />
 
         <CardGrid>
-          {postsData.map(({ slug, excerpt, title, tags }: PostData) => (
+          {posts.map(({ slug, excerpt, title, tags }: Post) => (
             <Card key={slug}>
               <h2 className="h3">
                 <Link href={`/blog/${slug}`}>
@@ -37,7 +37,7 @@ export default function LatestPosts({ postsData }: Props) {
               {tags && (
                 <Tags>
                   {tags.map((tag) => (
-                    <Link href={`/blog/tag/${tag.toLowerCase()}`} key={tag.toLowerCase()}>
+                    <Link href={`/blog/tag/${tag}`} key={tag}>
                       <a>
                         <Tag tag={tag} />
                       </a>

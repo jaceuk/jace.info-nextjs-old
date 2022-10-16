@@ -1,11 +1,13 @@
 import Head from 'next/head';
-import { getAllPosts } from '@lib/posts';
+import { getAllPosts, getTags } from '@lib/posts';
 import BlogPosts from '@components/Blog/BlogPosts';
 import Layout from '@components/Layout';
 import PageTitle from '@components/PageTitle';
+import { readableTags } from '@lib/constants';
 
 interface Props {
   allPosts: Data[];
+  tag: string;
 }
 
 interface Data {
@@ -16,30 +18,36 @@ interface Data {
   date: string;
 }
 
-export const getStaticProps = async () => {
-  const allPosts = getAllPosts(['title', 'excerpt', 'slug', 'tags', 'date']);
+interface Params {
+  params: {
+    tag: string;
+  };
+}
+
+export const getStaticProps = async ({ params }: Params) => {
+  const allPosts = getAllPosts(['title', 'excerpt', 'slug', 'tags', 'date'], 'blog', params.tag);
 
   return {
-    props: { allPosts },
+    props: { tag: params.tag, allPosts },
   };
 };
 
 export async function getStaticPaths() {
-  const posts = getAllPosts(['slug']);
+  const tags = await getTags();
+
+  const paths = tags.map((tag: string) => ({
+    params: {
+      tag,
+    },
+  }));
 
   return {
-    paths: posts.map((post) => {
-      return {
-        params: {
-          slug: post.slug,
-        },
-      };
-    }),
+    paths,
     fallback: false,
   };
 }
 
-export default function Home({ allPosts }: Props) {
+export default function Home({ tag, allPosts }: Props) {
   return (
     <>
       <Head>
@@ -47,7 +55,7 @@ export default function Home({ allPosts }: Props) {
       </Head>
 
       <Layout>
-        <PageTitle title="Blog posts" />
+        <PageTitle title={`${readableTags[tag]} blog posts`} />
         <BlogPosts data={allPosts} />
       </Layout>
     </>
