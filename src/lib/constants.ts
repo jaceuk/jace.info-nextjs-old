@@ -8,4 +8,5 @@ export const readableTags = {
   sveltekit: 'SvelteKit',
   nextjs: 'NextJS',
   git: 'Git',
+  misc: 'Misc.',
 };

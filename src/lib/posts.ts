@@ -50,7 +50,6 @@ export function getAllPosts(fields: string[] = [], type: 'blog' | 'projects', ta
     const post = getPostBySlug(slug, fields, type, tag);
     if (post) posts.push(post);
   });
-  console.log(posts);
   const sortedPosts = posts.sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return sortedPosts;
 }
