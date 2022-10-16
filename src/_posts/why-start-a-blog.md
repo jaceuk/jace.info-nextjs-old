@@ -18,7 +18,7 @@ Just the act of writing about a topic should help me remember more and when I in
 
 ## Web development is complicated
 
-I started my development career is simpler times where all you had to know where:
+I started my development career in simpler times where all you had to know where:
 
 - HTML
 - CSS

@@ -37,7 +37,7 @@ export default function LatestPosts({ postsData }: Props) {
               {tags && (
                 <Tags>
                   {tags.map((tag) => (
-                    <Link href={`/blog/${slug}`} key={tag}>
+                    <Link href={`/blog/tag/${tag.toLowerCase()}`} key={tag.toLowerCase()}>
                       <a>
                         <Tag tag={tag} />
                       </a>

@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Layout from '@components/Layout';
-import { getSortedData } from '@lib/posts';
+import { getSortedData } from '@lib/projects';
 import Hero from '@components/Home/Hero';
 import About from '@components/Home/About';
 import LatestPosts from '@components/Home/LatestPosts';

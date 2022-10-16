@@ -4,7 +4,7 @@ import InnerWrapper from '@components/InnerWrapper';
 import Image from 'next/image';
 import Lighthouse from './Lighthouse';
 import styles from './Project.module.scss';
-import { OpenNewWindow } from 'iconoir-react';
+import { ArrowDown, OpenNewWindow } from 'iconoir-react';
 
 interface Props {
   data: {
@@ -40,7 +40,7 @@ export default function Project({ data }: Props) {
                 <Link href="#screenshots">
                   <button className={styles.iconLink}>
                     View screenshots
-                    <OpenNewWindow />
+                    <ArrowDown />
                   </button>
                 </Link>
 
@@ -59,7 +59,7 @@ export default function Project({ data }: Props) {
 
             <div className={styles.text}>
               <h2 className="h3">Overview</h2>
-              <div className="markdown" dangerouslySetInnerHTML={{ __html: data.contentHtml }} />
+              <div className="markdown" dangerouslySetInnerHTML={{ __html: data.content }} />
 
               <h3>Skills used</h3>
               <div className={styles.skills}>

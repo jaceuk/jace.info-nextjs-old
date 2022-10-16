@@ -52,7 +52,7 @@
   .text {
     max-width: var(--max-readable-width);
     display: grid;
-    gap: var(--s-4-5);
+    gap: var(--s-4);
 
     @media (min-width: 768px) {
       min-width: 50%;
@@ -94,7 +94,7 @@
 
 .screenshots {
   display: flex;
-  gap: var(--s-2-5);
+  gap: var(--s-4-5);
   flex-direction: column;
 }
 

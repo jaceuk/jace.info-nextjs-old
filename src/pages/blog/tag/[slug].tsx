@@ -24,6 +24,21 @@ export const getStaticProps = async () => {
   };
 };
 
+export async function getStaticPaths() {
+  const posts = getAllPosts(['slug']);
+
+  return {
+    paths: posts.map((post) => {
+      return {
+        params: {
+          slug: post.slug,
+        },
+      };
+    }),
+    fallback: false,
+  };
+}
+
 export default function Home({ allPosts }: Props) {
   return (
     <>

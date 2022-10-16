@@ -1,71 +1,54 @@
-import { remark } from 'remark';
-import html from 'remark-html';
 import fs from 'fs';
-import path from 'path';
+import { join } from 'path';
 import matter from 'gray-matter';
 
-const dataDirectory = path.join(process.cwd(), 'src/_posts');
+let postsDirectory: string;
 
-export function getSortedData() {
-  // Get file names under /_posts
-  const fileNames = fs.readdirSync(dataDirectory);
-  const allData = fileNames.map((fileName) => {
-    // Remove ".md" from file name to get slug
-    const slug = fileName.replace(/\.md$/, '');
+function setPostsDirectory(type?: string) {
+  if (type === 'projects') return join(process.cwd(), 'src/_projects');
+  return join(process.cwd(), 'src/_posts');
+}
 
-    // Read markdown file as string
-    const fullPath = path.join(dataDirectory, fileName);
-    const fileContents = fs.readFileSync(fullPath, 'utf8');
+export function getPostSlugs(type?: string) {
+  const postsDirectory = setPostsDirectory(type);
+  return fs.readdirSync(postsDirectory);
+}
 
-    // Use gray-matter to parse the post metadata section
-    const matterResult = matter(fileContents);
+export function getPostBySlug(slug: string, fields: string[] = [], type?: string) {
+  const postsDirectory = setPostsDirectory(type);
+  const realSlug = slug.replace(/\.md$/, '');
+  const fullPath = join(postsDirectory, `${realSlug}.md`);
+  const fileContents = fs.readFileSync(fullPath, 'utf8');
+  const { data, content } = matter(fileContents);
 
-    // Combine the data with the slug
-    return {
-      slug,
-      ...matterResult.data,
-    };
-  });
+  type Items = {
+    [key: string]: string;
+  };
 
-  // Sort posts by date
-  return allData.sort(({ date: a }: any, { date: b }: any) => {
-    if (a < b) {
-      return 1;
-    } else if (a > b) {
-      return -1;
-    } else {
-      return 0;
+  const items: Items = {};
+
+  // Ensure only the minimal needed data is exposed
+  fields.forEach((field) => {
+    if (field === 'slug') {
+      items[field] = realSlug;
+    }
+    if (field === 'content') {
+      items[field] = content;
+    }
+
+    if (typeof data[field] !== 'undefined') {
+      items[field] = data[field];
     }
   });
+
+  return items;
 }
 
-export function getAllSlugs() {
-  const fileNames = fs.readdirSync(dataDirectory);
-
-  return fileNames.map((fileName) => {
-    return {
-      params: {
-        slug: fileName.replace(/\.md$/, ''),
-      },
-    };
-  });
-}
-
-export async function getData(slug: string) {
-  const fullPath = path.join(dataDirectory, `${slug}.md`);
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
-
-  // Use gray-matter to parse the post metadata section
-  const matterResult = matter(fileContents);
-
-  // Use remark to convert markdown into HTML string
-  const processedContent = await remark().use(html).process(matterResult.content);
-  const contentHtml = processedContent.toString();
-
-  // Combine the data with the slug and contentHtml
-  return {
-    slug,
-    contentHtml,
-    ...matterResult.data,
-  };
+export function getAllPosts(fields: string[] = [], type?: string) {
+  const slugs = getPostSlugs(type);
+  const posts = slugs
+    .map((slug) => getPostBySlug(slug, fields, type))
+    // sort posts by date in descending order
+    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+  return posts;
 }

@@ -1,47 +1,73 @@
 import Layout from '@components/Layout';
-import { getAllSlugs, getData } from '@lib/projects';
 import Head from 'next/head';
-import InnerWrapper from '@components/InnerWrapper';
 import PageTitle from '@components/PageTitle';
 import Project from '@components/Project';
+import { getAllPosts, getPostBySlug } from '@lib/posts';
+import markdownToHtml from '@lib/markdownToHtml';
 
 interface Props {
-  data: {
+  post: {
     slug: string;
-    type: string;
-    date: string;
+    excerpt: string;
     title: string;
+    type: string;
     contentHtml: string;
+    lighthouseScores: number[];
+    primarySkills: string[];
+    secondarySkills: string[];
+    url: string;
   };
 }
 
-export async function getStaticProps({ params }) {
-  const data = await getData(params.slug);
+interface Params {
+  params: {
+    slug: string;
+  };
+}
+
+export async function getStaticProps({ params }: Params) {
+  const post = getPostBySlug(
+    params.slug,
+    ['title', 'date', 'slug', 'content', 'primarySkills', 'secondarySkills', 'type', 'lighthouseScores', 'url'],
+    'projects',
+  );
+  const content = await markdownToHtml(post.content || '');
+
   return {
     props: {
-      data,
+      post: {
+        ...post,
+        content,
+      },
     },
   };
 }
 
 export async function getStaticPaths() {
-  const paths = getAllSlugs();
+  const posts = getAllPosts(['slug'], 'projects');
+
   return {
-    paths,
+    paths: posts.map((post) => {
+      return {
+        params: {
+          slug: post.slug,
+        },
+      };
+    }),
     fallback: false,
   };
 }
 
-export default function Post({ data }: Props) {
+export default function Post({ post }: Props) {
   return (
     <Layout>
       <Head>
-        <title>{data.title}</title>
+        <title>{post.title}</title>
       </Head>
 
-      <PageTitle title={data.title} preTitle={data.type} />
+      <PageTitle title={post.title} preTitle={post.type} />
 
-      <Project data={data} />
+      <Project data={post} />
     </Layout>
   );
 }

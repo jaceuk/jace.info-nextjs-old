@@ -2,7 +2,7 @@
 title: 'Dogs to Adopt'
 date: '2222-09-22'
 url: 'https://www.dogstoadopt.org.uk/'
-excerpt: 'A website to help abandoned dogs find new homes by allowing users to search dog shelters that are within their area.'
+excerpt: 'A website to help abandoned dogs find new homes by allowing users to search dog shelters within their area.'
 type: 'Website'
 primarySkills: ['HTML', 'React', 'CSS/Sass', 'Handlebars', 'Javascript']
 secondarySkills: ['NodeJS', 'MySQL', 'UX/UI', 'REST API', 'Express']

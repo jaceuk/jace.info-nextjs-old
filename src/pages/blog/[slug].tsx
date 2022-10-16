@@ -1,47 +1,66 @@
 import Layout from '@components/Layout';
-import { getAllSlugs, getData } from '@lib/posts';
+import { getAllPosts, getPostBySlug } from '@lib/posts';
 import Head from 'next/head';
 import InnerWrapper from '@components/InnerWrapper';
 import PageTitle from '@components/PageTitle';
+import markdownToHtml from '@lib/markdownToHtml';
 
 interface Props {
-  data: {
+  post: {
     slug: string;
     date: string;
     title: string;
-    contentHtml: string;
+    content: string;
   };
 }
 
-export async function getStaticProps({ params }) {
-  const data = await getData(params.slug);
+interface Params {
+  params: {
+    slug: string;
+  };
+}
+
+export async function getStaticProps({ params }: Params) {
+  const post = getPostBySlug(params.slug, ['title', 'date', 'slug', 'content', 'tags']);
+  const content = await markdownToHtml(post.content || '');
+
   return {
     props: {
-      data,
+      post: {
+        ...post,
+        content,
+      },
     },
   };
 }
 
 export async function getStaticPaths() {
-  const paths = getAllSlugs();
+  const posts = getAllPosts(['slug']);
+
   return {
-    paths,
+    paths: posts.map((post) => {
+      return {
+        params: {
+          slug: post.slug,
+        },
+      };
+    }),
     fallback: false,
   };
 }
 
-export default function Post({ data }: Props) {
+export default function Post({ post }: Props) {
   return (
     <Layout>
       <Head>
-        <title>{data.title}</title>
+        <title>{post.title}</title>
       </Head>
 
-      <PageTitle title={data.title} />
+      <PageTitle title={post.title} />
 
       <main className="section">
         <InnerWrapper>
-          <div className="markdown readable-content" dangerouslySetInnerHTML={{ __html: data.contentHtml }} />
+          <div className="markdown readable-content" dangerouslySetInnerHTML={{ __html: post.content }} />
         </InnerWrapper>
       </main>
     </Layout>

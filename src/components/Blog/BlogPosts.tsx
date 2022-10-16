@@ -3,7 +3,6 @@ import Card from '@components/Card';
 import CardGrid from '@components/CardGrid';
 import InnerWrapper from '@components/InnerWrapper';
 import ReadMore from '@components/ReadMore';
-import { ArrowRight } from 'iconoir-react';
 import Tag from '@components/Tag';
 import Tags from '@components/Tags';
 
@@ -16,6 +15,7 @@ interface PostData {
   excerpt: string;
   title: string;
   tags: string[];
+  date: string;
 }
 
 export default function LatestPosts({ data }: Props) {
@@ -34,7 +34,7 @@ export default function LatestPosts({ data }: Props) {
               {tags && (
                 <Tags>
                   {tags.map((tag) => (
-                    <Link href={`/blog/${slug}`} key={tag}>
+                    <Link href={`/blog/tag/${tag.toLowerCase()}`} key={tag.toLowerCase()}>
                       <a>
                         <Tag tag={tag} />
                       </a>
