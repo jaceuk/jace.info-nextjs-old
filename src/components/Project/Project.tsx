@@ -12,7 +12,7 @@ interface Props {
     excerpt: string;
     title: string;
     type: string;
-    contentHtml: string;
+    content: string;
     lighthouseScores: number[];
     primarySkills: string[];
     secondarySkills: string[];
