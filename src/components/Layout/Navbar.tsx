@@ -11,7 +11,7 @@ export default function Navbar() {
   const [showMobileNav, setShowMobileNav] = React.useState(false);
   const [darkMode, setDarkMode] = React.useState(false);
   const [underlineWidth, setUnderlineWidth] = React.useState(0);
-  const [offset, setOffset] = React.useState(0);
+  const [underlineOffset, setUnderlineOffset] = React.useState(0);
   const homeButton = React.useRef(null);
   const aboutButton = React.useRef(null);
   const projectsButton = React.useRef(null);
@@ -35,27 +35,27 @@ export default function Navbar() {
   React.useEffect(() => {
     if (router.pathname === '/') {
       setUnderlineWidth(homeButton.current.clientWidth);
-      setOffset(homeButton.current.offsetLeft);
+      setUnderlineOffset(homeButton.current.offsetLeft);
     }
 
     if (router.pathname === '/about') {
       setUnderlineWidth(aboutButton.current.clientWidth);
-      setOffset(aboutButton.current.offsetLeft);
+      setUnderlineOffset(aboutButton.current.offsetLeft);
     }
 
     if (router.pathname === '/projects') {
       setUnderlineWidth(projectsButton.current.clientWidth);
-      setOffset(projectsButton.current.offsetLeft);
+      setUnderlineOffset(projectsButton.current.offsetLeft);
     }
 
     if (router.pathname === '/blog') {
       setUnderlineWidth(blogButton.current.clientWidth);
-      setOffset(blogButton.current.offsetLeft);
+      setUnderlineOffset(blogButton.current.offsetLeft);
     }
 
     if (router.pathname === '/contact') {
       setUnderlineWidth(contactButton.current.clientWidth);
-      setOffset(contactButton.current.offsetLeft);
+      setUnderlineOffset(contactButton.current.offsetLeft);
     }
   }, [router.pathname]);
 
@@ -108,7 +108,7 @@ export default function Navbar() {
             {/* refactor */}
             <div
               className={styles.underline}
-              style={{ width: `${underlineWidth}px`, transform: `translatex(${offset}px)` }}
+              style={{ width: `${underlineWidth}px`, transform: `translatex(${underlineOffset}px)` }}
             />
           </nav>
         </div>
