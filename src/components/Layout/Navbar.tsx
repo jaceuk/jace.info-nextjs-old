@@ -25,6 +25,8 @@ export default function Navbar() {
     document.body.classList.remove('no-scroll');
   }, []);
 
+  console.log('RENDER');
+
   return (
     <div className={styles.navbarContainer}>
       <InnerWrapper>
@@ -43,46 +45,51 @@ export default function Navbar() {
           </Link>
 
           <nav>
-            <button onClick={handleModeClick}>{darkMode ? <SunLight /> : <HalfMoon />}</button>
+            <div className={styles.navLinks}>
+              <button onClick={handleModeClick}>{darkMode ? <SunLight /> : <HalfMoon />}</button>
 
-            <Link href="/">
-              <a className={router.pathname === '/' ? styles.active : ''}>
-                <div className={styles.text}>Home</div>
-                <div className={styles.underline}></div>
-              </a>
-            </Link>
+              <Link href="/">
+                <a>
+                  <div className={styles.text}>Home</div>
+                </a>
+              </Link>
 
-            <Link href="/about">
-              <a className={router.pathname === '/about' ? styles.active : ''}>
-                <div className={styles.text}>About</div>
-                <div className={styles.underline}></div>
-              </a>
-            </Link>
+              <Link href="/about">
+                <a>
+                  <div className={styles.text}>About</div>
+                </a>
+              </Link>
 
-            <Link href="/projects">
-              <a className={router.pathname === '/projects' ? styles.active : ''}>
-                <div className={styles.text}>Projects</div>
-                <div className={styles.underline}></div>
-              </a>
-            </Link>
+              <Link href="/projects">
+                <a>
+                  <div className={styles.text}>Projects</div>
+                </a>
+              </Link>
 
-            <Link href="/blog">
-              <a className={router.pathname.includes('/blog') ? styles.active : ''}>
-                <div className={styles.text}>Blog</div>
-                <div className={styles.underline}></div>
-              </a>
-            </Link>
+              <Link href="/blog">
+                <a>
+                  <div className={styles.text}>Blog</div>
+                </a>
+              </Link>
 
-            <Link href="/contact">
-              <a className={router.pathname === '/contact' ? styles.active : ''}>
-                <div className={styles.text}>Contact</div>
-                <div className={styles.underline}></div>
-              </a>
-            </Link>
+              <Link href="/contact">
+                <a>
+                  <div className={styles.text}>Contact</div>
+                </a>
+              </Link>
 
-            <button className={styles.menu} onClick={handleMenuClick}>
-              {showMobileNav ? <Cancel /> : <Menu />}
-            </button>
+              <button className={styles.menu} onClick={handleMenuClick}>
+                {showMobileNav ? <Cancel /> : <Menu />}
+              </button>
+            </div>
+
+            <div
+              className={`${styles.underline} ${router.pathname === '/contact' && styles.contact} ${
+                router.pathname === '/' && styles.home
+              } ${router.pathname === '/about' && styles.about} ${router.pathname === '/projects' && styles.projects} ${
+                router.pathname === '/blog' && styles.blog
+              }`}
+            />
           </nav>
         </div>
       </InnerWrapper>

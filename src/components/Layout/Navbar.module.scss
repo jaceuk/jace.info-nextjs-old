@@ -21,8 +21,15 @@
 
   nav {
     display: flex;
-    align-items: center;
-    gap: var(--s-2-4);
+    align-items: flex-start;
+    gap: 0.8rem;
+    flex-direction: column;
+
+    .navLinks {
+      display: flex;
+      align-items: center;
+      gap: var(--s-2-4);
+    }
 
     a {
       font-size: var(--fs-nav);
@@ -41,20 +48,6 @@
       .text {
         padding: var(--s-1-2);
       }
-
-      .underline {
-        height: 4px;
-        width: 100%;
-        border-radius: 2px;
-      }
-
-      &.active {
-        color: var(--c-accent);
-
-        .underline {
-          background-color: var(--c-accent);
-        }
-      }
     }
 
     button {
@@ -71,6 +64,45 @@
         @media (min-width: 768px) {
           display: none;
         }
+      }
+    }
+
+    .underline {
+      height: 4px;
+      width: 100%;
+      border-radius: 2px;
+      background-color: var(--c-accent);
+      width: 84px;
+      transition: 9999s transform 0.2s ease-out;
+
+      &.home {
+        width: 84px;
+        transform: translatex(60px);
+        transition: transform 0.5s, width 0.5s;
+      }
+
+      &.about {
+        width: 86px;
+        transform: translatex(174px);
+        transition: transform 0.5s, width 0.5s;
+      }
+
+      &.projects {
+        width: 105px;
+        transform: translatex(292px);
+        transition: transform 0.5s, width 0.5s;
+      }
+
+      &.blog {
+        width: 71px;
+        transform: translatex(430px);
+        transition: transform 0.5s, width 0.5s;
+      }
+
+      &.contact {
+        width: 103px;
+        transform: translatex(533px);
+        transition: transform 0.5s, width 0.5s;
       }
     }
   }
