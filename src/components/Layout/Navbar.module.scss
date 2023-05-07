@@ -19,6 +19,23 @@
     }
   }
 
+  button {
+    display: flex;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    background: none;
+    color: var(--c-nearly-black);
+
+    &.menu {
+      font-size: var(--fs-h4);
+
+      @media (min-width: 768px) {
+        display: none;
+      }
+    }
+  }
+
   nav {
     display: flex;
     align-items: flex-start;

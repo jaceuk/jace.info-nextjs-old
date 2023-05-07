@@ -56,10 +56,10 @@ export default function Navbar() {
             </a>
           </Link>
 
+          <button onClick={handleModeClick}>{darkMode ? <SunLight /> : <HalfMoon />}</button>
+
           <nav>
             <div className={styles.navLinks}>
-              <button onClick={handleModeClick}>{darkMode ? <SunLight /> : <HalfMoon />}</button>
-
               <Link href="/">
                 <a ref={homeButton}>Home</a>
               </Link>
@@ -85,7 +85,6 @@ export default function Navbar() {
               </button>
             </div>
 
-            {/* refactor */}
             <div
               className={styles.underline}
               style={{
