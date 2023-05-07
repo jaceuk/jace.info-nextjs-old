@@ -10,13 +10,12 @@ export default function Navbar() {
   const router = useRouter();
   const [showMobileNav, setShowMobileNav] = React.useState(false);
   const [darkMode, setDarkMode] = React.useState(false);
-  const [underlineWidth, setUnderlineWidth] = React.useState(0);
-  const [underlineOffset, setUnderlineOffset] = React.useState(0);
-  const homeButton = React.useRef(null);
-  const aboutButton = React.useRef(null);
-  const projectsButton = React.useRef(null);
-  const blogButton = React.useRef(null);
-  const contactButton = React.useRef(null);
+  const [activeButton, setActiveButton] = React.useState<React.MutableRefObject<HTMLAnchorElement>>();
+  const homeButton = React.useRef<HTMLAnchorElement>(null);
+  const aboutButton = React.useRef<HTMLAnchorElement>(null);
+  const projectsButton = React.useRef<HTMLAnchorElement>(null);
+  const blogButton = React.useRef<HTMLAnchorElement>(null);
+  const contactButton = React.useRef<HTMLAnchorElement>(null);
 
   function handleMenuClick() {
     setShowMobileNav((current) => !current);
@@ -33,30 +32,11 @@ export default function Navbar() {
   }, []);
 
   React.useEffect(() => {
-    if (router.pathname === '/') {
-      setUnderlineWidth(homeButton.current.clientWidth);
-      setUnderlineOffset(homeButton.current.offsetLeft);
-    }
-
-    if (router.pathname === '/about') {
-      setUnderlineWidth(aboutButton.current.clientWidth);
-      setUnderlineOffset(aboutButton.current.offsetLeft);
-    }
-
-    if (router.pathname === '/projects') {
-      setUnderlineWidth(projectsButton.current.clientWidth);
-      setUnderlineOffset(projectsButton.current.offsetLeft);
-    }
-
-    if (router.pathname === '/blog') {
-      setUnderlineWidth(blogButton.current.clientWidth);
-      setUnderlineOffset(blogButton.current.offsetLeft);
-    }
-
-    if (router.pathname === '/contact') {
-      setUnderlineWidth(contactButton.current.clientWidth);
-      setUnderlineOffset(contactButton.current.offsetLeft);
-    }
+    if (router.pathname === '/') setActiveButton(homeButton);
+    if (router.pathname === '/about') setActiveButton(aboutButton);
+    if (router.pathname === '/projects') setActiveButton(projectsButton);
+    if (router.pathname === '/blog') setActiveButton(blogButton);
+    if (router.pathname === '/contact') setActiveButton(contactButton);
   }, [router.pathname]);
 
   return (
@@ -108,7 +88,10 @@ export default function Navbar() {
             {/* refactor */}
             <div
               className={styles.underline}
-              style={{ width: `${underlineWidth}px`, transform: `translatex(${underlineOffset}px)` }}
+              style={{
+                width: `${activeButton?.current?.clientWidth}px`,
+                transform: `translatex(${activeButton?.current?.offsetLeft}px)`,
+              }}
             />
           </nav>
         </div>
