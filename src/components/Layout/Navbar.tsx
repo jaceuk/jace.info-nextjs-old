@@ -10,6 +10,13 @@ export default function Navbar() {
   const router = useRouter();
   const [showMobileNav, setShowMobileNav] = React.useState(false);
   const [darkMode, setDarkMode] = React.useState(false);
+  const [underlineWidth, setUnderlineWidth] = React.useState(0);
+  const [offset, setOffset] = React.useState(0);
+  const homeButton = React.useRef(null);
+  const aboutButton = React.useRef(null);
+  const projectsButton = React.useRef(null);
+  const blogButton = React.useRef(null);
+  const contactButton = React.useRef(null);
 
   function handleMenuClick() {
     setShowMobileNav((current) => !current);
@@ -25,7 +32,32 @@ export default function Navbar() {
     document.body.classList.remove('no-scroll');
   }, []);
 
-  console.log('RENDER');
+  React.useEffect(() => {
+    if (router.pathname === '/') {
+      setUnderlineWidth(homeButton.current.clientWidth);
+      setOffset(homeButton.current.offsetLeft);
+    }
+
+    if (router.pathname === '/about') {
+      setUnderlineWidth(aboutButton.current.clientWidth);
+      setOffset(aboutButton.current.offsetLeft);
+    }
+
+    if (router.pathname === '/projects') {
+      setUnderlineWidth(projectsButton.current.clientWidth);
+      setOffset(projectsButton.current.offsetLeft);
+    }
+
+    if (router.pathname === '/blog') {
+      setUnderlineWidth(blogButton.current.clientWidth);
+      setOffset(blogButton.current.offsetLeft);
+    }
+
+    if (router.pathname === '/contact') {
+      setUnderlineWidth(contactButton.current.clientWidth);
+      setOffset(contactButton.current.offsetLeft);
+    }
+  }, [router.pathname]);
 
   return (
     <div className={styles.navbarContainer}>
@@ -49,33 +81,23 @@ export default function Navbar() {
               <button onClick={handleModeClick}>{darkMode ? <SunLight /> : <HalfMoon />}</button>
 
               <Link href="/">
-                <a>
-                  <div className={styles.text}>Home</div>
-                </a>
+                <a ref={homeButton}>Home</a>
               </Link>
 
               <Link href="/about">
-                <a>
-                  <div className={styles.text}>About</div>
-                </a>
+                <a ref={aboutButton}>About</a>
               </Link>
 
               <Link href="/projects">
-                <a>
-                  <div className={styles.text}>Projects</div>
-                </a>
+                <a ref={projectsButton}>Projects</a>
               </Link>
 
               <Link href="/blog">
-                <a>
-                  <div className={styles.text}>Blog</div>
-                </a>
+                <a ref={blogButton}>Blog</a>
               </Link>
 
               <Link href="/contact">
-                <a>
-                  <div className={styles.text}>Contact</div>
-                </a>
+                <a ref={contactButton}>Contact</a>
               </Link>
 
               <button className={styles.menu} onClick={handleMenuClick}>
@@ -83,12 +105,10 @@ export default function Navbar() {
               </button>
             </div>
 
+            {/* refactor */}
             <div
-              className={`${styles.underline} ${router.pathname === '/contact' && styles.contact} ${
-                router.pathname === '/' && styles.home
-              } ${router.pathname === '/about' && styles.about} ${router.pathname === '/projects' && styles.projects} ${
-                router.pathname === '/blog' && styles.blog
-              }`}
+              className={styles.underline}
+              style={{ width: `${underlineWidth}px`, transform: `translatex(${offset}px)` }}
             />
           </nav>
         </div>

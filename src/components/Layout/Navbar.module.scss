@@ -24,18 +24,20 @@
     align-items: flex-start;
     gap: 0.8rem;
     flex-direction: column;
+    position: relative;
 
     .navLinks {
       display: flex;
       align-items: center;
-      gap: var(--s-2-4);
+      gap: 3.2rem;
     }
 
     a {
-      font-size: var(--fs-nav);
+      font-size: 1.8rem;
       font-weight: var(--fw-bold);
       transition: var(--transition);
       display: none;
+      padding: 1.6rem;
 
       @media (min-width: 768px) {
         display: grid;
@@ -43,10 +45,6 @@
 
       &:hover {
         color: var(--c-accent);
-      }
-
-      .text {
-        padding: var(--s-1-2);
       }
     }
 
@@ -73,36 +71,11 @@
       border-radius: 2px;
       background-color: var(--c-accent);
       width: 84px;
-      transition: 9999s transform 0.2s ease-out;
+      transition: transform 0.5s, width 0.5s;
+      display: none;
 
-      &.home {
-        width: 84px;
-        transform: translatex(60px);
-        transition: transform 0.5s, width 0.5s;
-      }
-
-      &.about {
-        width: 86px;
-        transform: translatex(174px);
-        transition: transform 0.5s, width 0.5s;
-      }
-
-      &.projects {
-        width: 105px;
-        transform: translatex(292px);
-        transition: transform 0.5s, width 0.5s;
-      }
-
-      &.blog {
-        width: 71px;
-        transform: translatex(430px);
-        transition: transform 0.5s, width 0.5s;
-      }
-
-      &.contact {
-        width: 103px;
-        transform: translatex(533px);
-        transition: transform 0.5s, width 0.5s;
+      @media (min-width: 768px) {
+        display: block;
       }
     }
   }
